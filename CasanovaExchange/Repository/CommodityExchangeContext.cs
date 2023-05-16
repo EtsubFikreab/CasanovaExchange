@@ -13,7 +13,7 @@ namespace CasanovaExchange.Repository
         }
 
         public DbSet<Commodity> commodity { get; set; }
-        public DbSet<Trade> trade { get; set; }
+        public DbSet<Portfolio> portfolio { get; set; }
 
     }
 }

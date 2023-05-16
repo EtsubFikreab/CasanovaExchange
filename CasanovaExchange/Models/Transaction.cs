@@ -2,7 +2,7 @@
 {
     public class Transaction
     {
-        public int Id { get; set; }
+        public int TransactionId { get; set; }
         public Commodity commodity { get; set; }
         public decimal PriceBought { get; set; }
         public decimal Price { get; set; }

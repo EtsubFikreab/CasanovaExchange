@@ -2,7 +2,7 @@
 {
     public class Wallet
     {
-        public User UserId { get; set; }
+        public int WalletId{ get; set; }
         public decimal Balance { get; set; }
     }
 }

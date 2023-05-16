@@ -4,6 +4,7 @@ using CasanovaExchange.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasanovaExchange.Migrations
 {
     [DbContext(typeof(CommodityExchangeContext))]
-    partial class CommodityExchangeContextModelSnapshot : ModelSnapshot
+    [Migration("20230516140714_Cassanova")]
+    partial class Cassanova
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,78 +58,40 @@ namespace CasanovaExchange.Migrations
                     b.ToTable("commodity");
                 });
 
-            modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
+            modelBuilder.Entity("CasanovaExchange.Models.Trade", b =>
                 {
-                    b.Property<int>("PortfolioId")
+                    b.Property<int>("TradeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PortfolioId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TradeId"));
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<double>("Change")
+                        .HasColumnType("float");
 
-                    b.Property<int>("WalletId")
+                    b.Property<double>("Close")
+                        .HasColumnType("float");
+
+                    b.Property<int>("CommodityTradedId")
                         .HasColumnType("int");
 
-                    b.HasKey("PortfolioId");
+                    b.Property<double>("High")
+                        .HasColumnType("float");
 
-                    b.HasIndex("UserId");
+                    b.Property<double>("Low")
+                        .HasColumnType("float");
 
-                    b.HasIndex("WalletId");
+                    b.Property<double>("PreviousClose")
+                        .HasColumnType("float");
 
-                    b.ToTable("portfolio");
-                });
+                    b.Property<double>("Volume")
+                        .HasColumnType("float");
 
-            modelBuilder.Entity("CasanovaExchange.Models.Transaction", b =>
-                {
-                    b.Property<int>("TransactionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasKey("TradeId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
+                    b.HasIndex("CommodityTradedId");
 
-                    b.Property<int?>("PortfolioId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("PriceBought")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("QuantityBought")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("commodityId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TransactionId");
-
-                    b.HasIndex("PortfolioId");
-
-                    b.HasIndex("commodityId");
-
-                    b.ToTable("Transaction");
-                });
-
-            modelBuilder.Entity("CasanovaExchange.Models.Wallet", b =>
-                {
-                    b.Property<int>("WalletId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WalletId"));
-
-                    b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("WalletId");
-
-                    b.ToTable("Wallet");
+                    b.ToTable("trade");
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Warehouse", b =>
@@ -359,36 +324,15 @@ namespace CasanovaExchange.Migrations
                     b.Navigation("CommodityWarehouse");
                 });
 
-            modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
+            modelBuilder.Entity("CasanovaExchange.Models.Trade", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                    b.HasOne("CasanovaExchange.Models.Commodity", "CommodityTraded")
                         .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.HasOne("CasanovaExchange.Models.Wallet", "Wallet")
-                        .WithMany()
-                        .HasForeignKey("WalletId")
+                        .HasForeignKey("CommodityTradedId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
-
-                    b.Navigation("Wallet");
-                });
-
-            modelBuilder.Entity("CasanovaExchange.Models.Transaction", b =>
-                {
-                    b.HasOne("CasanovaExchange.Models.Portfolio", null)
-                        .WithMany("transactions")
-                        .HasForeignKey("PortfolioId");
-
-                    b.HasOne("CasanovaExchange.Models.Commodity", "commodity")
-                        .WithMany()
-                        .HasForeignKey("commodityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("commodity");
+                    b.Navigation("CommodityTraded");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -440,11 +384,6 @@ namespace CasanovaExchange.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
-                {
-                    b.Navigation("transactions");
                 });
 #pragma warning restore 612, 618
         }
