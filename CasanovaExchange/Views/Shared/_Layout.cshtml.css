@@ -30,18 +30,22 @@ button.accept-policy {
 }
 
 .sidebar {
-    background-color: #404258;
-    height:100vh;
+    /*background-color: #404258;*/
+    height: 100vh;
+    position: fixed;
+    width: 13vw;
+    background-color: #2E4057;
 }
-.body-container {
-    background-color: #50577A;
-}
-.container{
-    height:100vh;
-    overflow-y:scroll;
-    padding:4ch;
-    padding-top:7ch;
-    padding-inline:15ch;
+.container {
+    min-height:100vh;
+    height: 100%;
+    padding: 4ch;
+    padding-top: 7ch;
+    padding-inline: 15ch;
+    width: 87vw;
+    margin-left:13vw;
+    
+    justify-content:flex-start;
 }
 .nav-link {
     text-decoration: none;
