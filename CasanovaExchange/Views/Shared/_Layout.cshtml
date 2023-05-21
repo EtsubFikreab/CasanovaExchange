@@ -4,14 +4,16 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - CasanovaExchange</title>
+
+	<link rel="shortcut icon" type="image/jpg" href="~/icons/coffee.png" />
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/CasanovaExchange.styles.css" asp-append-version="true" />
 	
 </head>
-<body style="width:inherit"  >
-	<div class="body-container d-flex">
-		<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+<body>
+	<div class="body-container d-flex bg-dark">
+		<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
 			<a asp-area="" asp-controller="Home" asp-action="Index" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
 				<span class="fs-4">Casanova Exchange</span>
@@ -38,15 +40,14 @@
 					</a>
 				</li>
 				<li>
-					<a  class="nav-link text-white">
-						
-						<img class="flex-row align-items-center" src="~/icons/icons8_wallet_48px.png" style="width: 30px;" />
+					<a class="nav-link text-white">
+						<img class="flex-row align-items-center" src="~/icons/icons8_coin_wallet_64px.png" style="width: 30px;" />
 						Wallet
 					</a>
 				</li>
 				<li>
 					<a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-link text-white">
-						<img class="flex-row align-items-center" src="~/icons/icons8_privacy_64px.png" style="width: 30px;" />
+						<img class="flex-row align-items-center" src="~/icons/icons8_shield_64px.png" style="width: 30px;" />
 						Privacy
 					</a>
 				</li>
@@ -85,7 +86,7 @@
 		</div>
 
 
-		<div class="container overflow-y-scroll text-bg-dark text-white">
+		<div class="container overflow-y-scroll text-bg-dark text-white bg-dark">
 			<main role="main" class="pb-3">
 				@RenderBody()
 			</main>
