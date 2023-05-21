@@ -1,0 +1,72 @@
+﻿@using CasanovaExchange.Models
+
+@model SigninModel
+@{
+    ViewData["title"] = "Sign In";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CasanovaExchange</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CasanovaExchange.styles.css" asp-append-version="true" />
+   
+</head>
+<body>
+    <h4>Sign In Form</h4>
+
+    <hr />
+
+<div class="mb-2" style="-ms-content-zoom-limit-max:unset">
+    @if (TempData["Message"] != null)
+    {
+        <div class="col-md-12 alert alert-danger">
+            <span><b>Sorry!</b> @TempData["Message"]</span>
+        </div>
+    }
+    <form method="post" class="mt-3" >
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>Sorry!</b> @TempData["Error"]</span>
+            </div>
+
+                }
+
+        <div class="form-group row" >
+            <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Email" class="form-control mb-2"  style="width:20em " />
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group row" style="gap:inherit.2em">
+            <label asp-for="Password" class="col-sm-2 col-form-label"></label>
+
+           
+
+                <div class="col-sm-10">
+                    <input asp-for="Password" class="form-control mb-2" style="width:20em" />
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            
+        </div>
+        
+        <div class="form-group">
+            <input type="submit" value="SignIn" class="btn btn-primary mb-5" />
+        </div>
+    </form>
+
+</div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
