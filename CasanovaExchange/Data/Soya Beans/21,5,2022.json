@@ -1,0 +1,24 @@
+[
+ {
+  "Symbol": "SBGJ3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3300",
+  "Close": "2700",
+  "High": "2700",
+  "Low": "2700",
+  "Change": "600",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "SBGJ2",
+  "ProductionYear": "2015",
+  "PrvsClose": "2802",
+  "Close": "2792",
+  "High": "2800",
+  "Low": "2789",
+  "Change": "10",
+  "Vol_in_Ton": "45.00",
+  "WarehouseName": "Bure"
+ }
+]

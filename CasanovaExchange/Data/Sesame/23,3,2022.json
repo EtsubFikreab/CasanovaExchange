@@ -1,0 +1,68 @@
+[
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "PrvsClose": "10350",
+  "Close": "10500",
+  "High": "10500",
+  "Low": "10500",
+  "Change": "150",
+  "Vol_in_Ton": "30.00",
+  "WarehouseName": "SarisGrain"
+ },
+ {
+  "Symbol": "WWSS4",
+  "ProductionYear": "2015",
+  "PrvsClose": "11455",
+  "Close": "11501",
+  "High": "11502",
+  "Low": "11500",
+  "Change": "46",
+  "Vol_in_Ton": "18.30",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "10000",
+  "Close": "11100",
+  "High": "11100",
+  "Low": "11100",
+  "Change": "1100",
+  "Vol_in_Ton": "6.30",
+  "WarehouseName": "Bedelle"
+ },
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "11500",
+  "Close": "11599",
+  "High": "11600",
+  "Low": "11599",
+  "Change": "99",
+  "Vol_in_Ton": "20.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12850",
+  "Close": "12850",
+  "High": "12850",
+  "Low": "12850",
+  "Change": "0",
+  "Vol_in_Ton": "56.40",
+  "WarehouseName": "Abrehajira"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12896",
+  "Close": "12888",
+  "High": "12901",
+  "Low": "12880",
+  "Change": "8",
+  "Vol_in_Ton": "128.20",
+  "WarehouseName": "Dansha"
+ }
+]

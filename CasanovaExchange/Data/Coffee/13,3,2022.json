@@ -1,0 +1,172 @@
+[
+ {
+  "Symbol": "UBM4",
+  "ProductionYear": "2014",
+  "PrvsClose": "3174",
+  "Close": "3142",
+  "High": "3142",
+  "Low": "3142",
+  "Change": "32",
+  "Vol_in_Ton": "7.19"
+ },
+ {
+  "Symbol": "LWYC2",
+  "ProductionYear": "2015",
+  "PrvsClose": "4300",
+  "Close": "4330",
+  "High": "4330",
+  "Low": "4330",
+  "Change": "30",
+  "Vol_in_Ton": "7.21",
+  "Column9": "Dilla"
+ },
+ {
+  "Symbol": "LWSD2",
+  "ProductionYear": "2015",
+  "PrvsClose": "4300",
+  "Close": "4120",
+  "High": "4305",
+  "Low": "3955",
+  "Change": "180",
+  "Vol_in_Ton": "14.45",
+  "Column9": "Hawassa"
+ },
+ {
+  "Symbol": "LWKF2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3000",
+  "Close": "3616",
+  "High": "3616",
+  "Low": "3616",
+  "Change": "616",
+  "Vol_in_Ton": "6.15",
+  "Column9": "Bonga"
+ },
+ {
+  "Symbol": "LWIB2",
+  "ProductionYear": "2015",
+  "PrvsClose": "2003",
+  "Close": "2703",
+  "High": "2703",
+  "Low": "2703",
+  "Change": "700",
+  "Vol_in_Ton": "5.10"
+ },
+ {
+  "Symbol": "LWGj2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3684",
+  "Close": "3551",
+  "High": "3551",
+  "Low": "3551",
+  "Change": "133",
+  "Vol_in_Ton": "4.34",
+  "Column9": "Bule Hora"
+ },
+ {
+  "Symbol": "LWBP2",
+  "ProductionYear": "2014",
+  "PrvsClose": "4509",
+  "Close": "4521",
+  "High": "4521",
+  "Low": "4521",
+  "Change": "12",
+  "Vol_in_Ton": "6.77",
+  "Column9": "SarisCoffee"
+ },
+ {
+  "Symbol": "LWBP1",
+  "ProductionYear": "2014",
+  "PrvsClose": "5459",
+  "Close": "4950",
+  "High": "4950",
+  "Low": "4950",
+  "Change": "509",
+  "Vol_in_Ton": "11.22",
+  "Column9": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUGD3",
+  "ProductionYear": "2014",
+  "PrvsClose": "3323",
+  "Close": "3250",
+  "High": "3406",
+  "Low": "3100",
+  "Change": "73",
+  "Vol_in_Ton": "27.85"
+ },
+ {
+  "Symbol": "LUGD2",
+  "ProductionYear": "2014",
+  "PrvsClose": "3600",
+  "Close": "3300",
+  "High": "3300",
+  "Low": "3300",
+  "Change": "300",
+  "Vol_in_Ton": "5.32"
+ },
+ {
+  "Symbol": "LUGD2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3400",
+  "Close": "3400",
+  "High": "3400",
+  "Low": "3400",
+  "Change": "0",
+  "Vol_in_Ton": "11.07"
+ },
+ {
+  "Symbol": "LUGD1",
+  "ProductionYear": "2014",
+  "PrvsClose": "3700",
+  "Close": "3650",
+  "High": "3650",
+  "Low": "3650",
+  "Change": "50",
+  "Vol_in_Ton": "16.73"
+ },
+ {
+  "Symbol": "LUBPAA5",
+  "ProductionYear": "2014",
+  "PrvsClose": "2270",
+  "Close": "2192",
+  "High": "2270",
+  "Low": "2103",
+  "Change": "78",
+  "Vol_in_Ton": "14.40",
+  "Column9": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA4",
+  "ProductionYear": "2014",
+  "PrvsClose": "3125",
+  "Close": "3206",
+  "High": "3438",
+  "Low": "3020",
+  "Change": "81",
+  "Vol_in_Ton": "39.93",
+  "Column9": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA3",
+  "ProductionYear": "2014",
+  "PrvsClose": "3357",
+  "Close": "3693",
+  "High": "3693",
+  "Low": "3693",
+  "Change": "336",
+  "Vol_in_Ton": "15.30",
+  "Column9": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA1",
+  "ProductionYear": "2014",
+  "PrvsClose": "4214",
+  "Close": "4400",
+  "High": "4400",
+  "Low": "4400",
+  "Change": "186",
+  "Vol_in_Ton": "7.29",
+  "Column9": "SarisCoffee"
+ }
+]

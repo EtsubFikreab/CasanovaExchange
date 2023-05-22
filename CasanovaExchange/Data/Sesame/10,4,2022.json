@@ -1,0 +1,68 @@
+[
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "PrvsClose": "10200",
+  "Close": "10300",
+  "High": "10300",
+  "Low": "10300",
+  "Change": "100",
+  "Vol_in_Ton": "27.20",
+  "WarehouseName": "Nekemte"
+ },
+ {
+  "Symbol": "WWSS5",
+  "ProductionYear": "2015",
+  "PrvsClose": "10000",
+  "Close": "11000",
+  "High": "11000",
+  "Low": "11000",
+  "Change": "1000",
+  "Vol_in_Ton": "5.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "PrvsClose": "12500",
+  "Close": "12300",
+  "High": "12300",
+  "Low": "12300",
+  "Change": "200",
+  "Vol_in_Ton": "15.50",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "12350",
+  "Close": "12422",
+  "High": "12449",
+  "Low": "12400",
+  "Change": "72",
+  "Vol_in_Ton": "45.00",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12745",
+  "Close": "12800",
+  "High": "12800",
+  "Low": "12800",
+  "Change": "55",
+  "Vol_in_Ton": "54.20",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12500",
+  "Close": "12500",
+  "High": "12500",
+  "Low": "12500",
+  "Change": "0",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Metema"
+ }
+]

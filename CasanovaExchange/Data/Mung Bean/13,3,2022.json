@@ -1,0 +1,79 @@
+[
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "7134",
+  "Close": "6700",
+  "High": "6700",
+  "Low": "6700",
+  "Change": "434",
+  "Vol_in_Ton": "15.70",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "7100",
+  "Close": "7000",
+  "High": "7000",
+  "Low": "7000",
+  "Change": "100",
+  "Vol_in_Ton": "6.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "7000",
+  "Close": "6800",
+  "High": "6800",
+  "Low": "6800",
+  "Change": "200",
+  "Vol_in_Ton": "15.10",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "7192",
+  "Close": "7038",
+  "High": "7050",
+  "Low": "7000",
+  "Change": "154",
+  "Vol_in_Ton": "52.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "GMBG3",
+  "ProductionYear": "2015",
+  "PrvsClose": "5266",
+  "Close": "5200",
+  "High": "5200",
+  "Low": "5200",
+  "Change": "66",
+  "Vol_in_Ton": "30.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "GMBG2",
+  "ProductionYear": "2014",
+  "PrvsClose": "5200",
+  "Close": "5200",
+  "High": "5200",
+  "Low": "5200",
+  "Change": "0",
+  "Vol_in_Ton": "5.30",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "GMBG2",
+  "ProductionYear": "2015",
+  "PrvsClose": "5900",
+  "Close": "5500",
+  "High": "5500",
+  "Low": "5500",
+  "Change": "400",
+  "Vol_in_Ton": "9.60",
+  "WarehouseName": "Gonder"
+ }
+]

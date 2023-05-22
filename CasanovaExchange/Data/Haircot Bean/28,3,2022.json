@@ -1,0 +1,24 @@
+[
+ {
+  "Symbol": "RWPALG",
+  "ProductionYear": "2015",
+  "PrvsClose": "4000",
+  "Close": "4000",
+  "High": "4000",
+  "Low": "4000",
+  "Change": "0",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "RWPA5",
+  "ProductionYear": "2015",
+  "PrvsClose": "4400",
+  "Close": "4402",
+  "High": "4402",
+  "Low": "4402",
+  "Change": "2",
+  "Vol_in_Ton": "20.00",
+  "WarehouseName": "Nazareth"
+ }
+]

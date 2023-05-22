@@ -1,0 +1,57 @@
+[
+ {
+  "Symbol": "SBGO3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3400",
+  "Close": "3350",
+  "High": "3350",
+  "Low": "3350",
+  "Change": "50",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3355",
+  "Close": "3280",
+  "High": "3280",
+  "Low": "3280",
+  "Change": "75",
+  "Vol_in_Ton": "20.80",
+  "WarehouseName": "Abrehajira"
+ },
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3555",
+  "Close": "3469",
+  "High": "3497",
+  "Low": "3450",
+  "Change": "86",
+  "Vol_in_Ton": "132.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGJ2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3502",
+  "Close": "3480",
+  "High": "3480",
+  "Low": "3478",
+  "Change": "22",
+  "Vol_in_Ton": "21.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "SBAS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3380",
+  "Close": "3281",
+  "High": "3285",
+  "Low": "3280",
+  "Change": "99",
+  "Vol_in_Ton": "67.90",
+  "WarehouseName": "Pawe"
+ }
+]

@@ -1,0 +1,178 @@
+[
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "PrvsClose": "10500",
+  "Close": "10500",
+  "High": "10500",
+  "Low": "10500",
+  "Change": "0",
+  "Vol_in_Ton": "6.60",
+  "WarehouseName": "SarisGrain"
+ },
+ {
+  "Symbol": "WWSS5",
+  "ProductionYear": "2015",
+  "PrvsClose": "11000",
+  "Close": "11100",
+  "High": "11100",
+  "Low": "11100",
+  "Change": "100",
+  "Vol_in_Ton": "13.50",
+  "WarehouseName": "Nekemte"
+ },
+ {
+  "Symbol": "WWSS4",
+  "ProductionYear": "2015",
+  "PrvsClose": "11000",
+  "Close": "11100",
+  "High": "11100",
+  "Low": "11100",
+  "Change": "100",
+  "Vol_in_Ton": "11.20",
+  "WarehouseName": "Bedelle"
+ },
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "11200",
+  "Close": "11000",
+  "High": "11000",
+  "Low": "11000",
+  "Change": "200",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Assosa"
+ },
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "11599",
+  "Close": "11600",
+  "High": "11600",
+  "Low": "11600",
+  "Change": "1",
+  "Vol_in_Ton": "16.60",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WWSS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "11201",
+  "Close": "11000",
+  "High": "11000",
+  "Low": "11000",
+  "Change": "201",
+  "Vol_in_Ton": "15.00",
+  "WarehouseName": "Assosa"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "PrvsClose": "12700",
+  "Close": "12686",
+  "High": "12700",
+  "Low": "12600",
+  "Change": "14",
+  "Vol_in_Ton": "36.90",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "PrvsClose": "12000",
+  "Close": "12200",
+  "High": "12200",
+  "Low": "12200",
+  "Change": "200",
+  "Vol_in_Ton": "31.10",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "12850",
+  "Close": "12809",
+  "High": "12850",
+  "Low": "12800",
+  "Change": "41",
+  "Vol_in_Ton": "34.90",
+  "WarehouseName": "Abrehajira"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "12857",
+  "Close": "12800",
+  "High": "12800",
+  "Low": "12800",
+  "Change": "57",
+  "Vol_in_Ton": "25.70",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "13197",
+  "Close": "12920",
+  "High": "13000",
+  "Low": "12900",
+  "Change": "277",
+  "Vol_in_Ton": "37.30",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "12559",
+  "Close": "12676",
+  "High": "12700",
+  "Low": "12650",
+  "Change": "117",
+  "Vol_in_Ton": "106.90",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12850",
+  "Close": "12845",
+  "High": "12850",
+  "Low": "12840",
+  "Change": "5",
+  "Vol_in_Ton": "19.30",
+  "WarehouseName": "Abrehajira"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12888",
+  "Close": "12880",
+  "High": "12880",
+  "Low": "12880",
+  "Change": "8",
+  "Vol_in_Ton": "38.70",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "13200",
+  "Close": "12995",
+  "High": "13000",
+  "Low": "12990",
+  "Change": "205",
+  "Vol_in_Ton": "140.50",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "12600",
+  "Close": "12715",
+  "High": "12750",
+  "Low": "12700",
+  "Change": "115",
+  "Vol_in_Ton": "42.90",
+  "WarehouseName": "Metema"
+ }
+]

@@ -1,0 +1,35 @@
+[
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "7200",
+  "Close": "7000",
+  "High": "7000",
+  "Low": "7000",
+  "Change": "200",
+  "Vol_in_Ton": "51.70",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBG3",
+  "ProductionYear": "2015",
+  "PrvsClose": "5307",
+  "Close": "5266",
+  "High": "5300",
+  "Low": "5250",
+  "Change": "41",
+  "Vol_in_Ton": "109.50",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "GMBB3",
+  "ProductionYear": "2015",
+  "PrvsClose": "6000",
+  "Close": "6000",
+  "High": "6000",
+  "Low": "6000",
+  "Change": "0",
+  "Vol_in_Ton": "35.00",
+  "WarehouseName": "SarisGrain"
+ }
+]

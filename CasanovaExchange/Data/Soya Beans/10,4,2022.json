@@ -1,0 +1,57 @@
+[
+ {
+  "Symbol": "SBGO3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3500",
+  "Close": "3486",
+  "High": "3489",
+  "Low": "3479",
+  "Change": "14",
+  "Vol_in_Ton": "32.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3600",
+  "Close": "3570",
+  "High": "3570",
+  "Low": "3570",
+  "Change": "30",
+  "Vol_in_Ton": "57.90",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3400",
+  "Close": "3401",
+  "High": "3406",
+  "Low": "3400",
+  "Change": "1",
+  "Vol_in_Ton": "65.20",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "SBGO1",
+  "ProductionYear": "2015",
+  "PrvsClose": "3600",
+  "Close": "3580",
+  "High": "3580",
+  "Low": "3580",
+  "Change": "20",
+  "Vol_in_Ton": "10.50",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGJ2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3605",
+  "Close": "3595",
+  "High": "3600",
+  "Low": "3590",
+  "Change": "10",
+  "Vol_in_Ton": "306.60",
+  "WarehouseName": "Bure"
+ }
+]

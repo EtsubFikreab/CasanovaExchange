@@ -1,0 +1,24 @@
+[
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "6800",
+  "Close": "6800",
+  "High": "6800",
+  "Low": "6800",
+  "Change": "0",
+  "Vol_in_Ton": "5.00",
+  "WarehouseName": "WolaytaSodo Grain"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "PrvsClose": "7024",
+  "Close": "7200",
+  "High": "7200",
+  "Low": "7200",
+  "Change": "176",
+  "Vol_in_Ton": "24.80",
+  "WarehouseName": "WolaytaSodo Grain"
+ }
+]

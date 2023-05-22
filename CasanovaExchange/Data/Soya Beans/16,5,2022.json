@@ -1,0 +1,90 @@
+[
+ {
+  "Symbol": "SBGO3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3282",
+  "Close": "3100",
+  "High": "3100",
+  "Low": "3100",
+  "Change": "182",
+  "Vol_in_Ton": "9.90",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGO3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3400",
+  "Close": "3127",
+  "High": "3150",
+  "Low": "3100",
+  "Change": "273",
+  "Vol_in_Ton": "37.40",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3400",
+  "Close": "3199",
+  "High": "3200",
+  "Low": "3199",
+  "Change": "201",
+  "Vol_in_Ton": "30.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3300",
+  "Close": "3250",
+  "High": "3250",
+  "Low": "3249",
+  "Change": "50",
+  "Vol_in_Ton": "17.70",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "SBGO1",
+  "ProductionYear": "2015",
+  "PrvsClose": "3301",
+  "Close": "3031",
+  "High": "3031",
+  "Low": "3031",
+  "Change": "270",
+  "Vol_in_Ton": "5.00",
+  "WarehouseName": "Abrehajira"
+ },
+ {
+  "Symbol": "SBGJ3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3300",
+  "Close": "3264",
+  "High": "3300",
+  "Low": "3230",
+  "Change": "36",
+  "Vol_in_Ton": "78.50",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "SBGJ2",
+  "ProductionYear": "2015",
+  "PrvsClose": "3417",
+  "Close": "3327",
+  "High": "3350",
+  "Low": "3300",
+  "Change": "90",
+  "Vol_in_Ton": "316.60",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "SBAS3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3180",
+  "Close": "3180",
+  "High": "3180",
+  "Low": "3180",
+  "Change": "0",
+  "Vol_in_Ton": "40.00",
+  "WarehouseName": "Pawe"
+ }
+]

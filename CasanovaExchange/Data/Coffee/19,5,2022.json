@@ -1,0 +1,155 @@
+[
+ {
+  "Symbol": "LWYC2",
+  "ProductionYear": "2015",
+  "PrvsClose": "4100",
+  "Close": "4001",
+  "High": "4001",
+  "Low": "4001",
+  "Change": "99",
+  "Vol_in_Ton": "10.37",
+  "WarehouseName": "Dilla"
+ },
+ {
+  "Symbol": "LWYC1",
+  "ProductionYear": "2015",
+  "PrvsClose": "4430",
+  "Close": "4711",
+  "High": "4711",
+  "Low": "4711",
+  "Change": "281",
+  "Vol_in_Ton": "8.13",
+  "WarehouseName": "Dilla"
+ },
+ {
+  "Symbol": "LWSD3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3230",
+  "Close": "3000",
+  "High": "3000",
+  "Low": "3000",
+  "Change": "230",
+  "Vol_in_Ton": "5.97",
+  "WarehouseName": "Hawassa"
+ },
+ {
+  "Symbol": "LWJM1",
+  "ProductionYear": "2015",
+  "PrvsClose": "3501",
+  "Close": "3550",
+  "High": "3550",
+  "Low": "3550",
+  "Change": "49",
+  "Vol_in_Ton": "5.93",
+  "WarehouseName": "Jimma"
+ },
+ {
+  "Symbol": "LWBP3",
+  "ProductionYear": "2015",
+  "PrvsClose": "4225",
+  "Close": "4389",
+  "High": "4389",
+  "Low": "4389",
+  "Change": "164",
+  "Vol_in_Ton": "7.65",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LWBP2",
+  "ProductionYear": "2015",
+  "PrvsClose": "4900",
+  "Close": "4670",
+  "High": "4755",
+  "Low": "4600",
+  "Change": "230",
+  "Vol_in_Ton": "13.97",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUWL4",
+  "ProductionYear": "2015",
+  "PrvsClose": "1511",
+  "Close": "1420",
+  "High": "1420",
+  "Low": "1420",
+  "Change": "91",
+  "Vol_in_Ton": "5.10",
+  "WarehouseName": "Gimbi"
+ },
+ {
+  "Symbol": "LUGD4",
+  "ProductionYear": "2014",
+  "PrvsClose": "2860",
+  "Close": "3146",
+  "High": "3146",
+  "Low": "3146",
+  "Change": "286",
+  "Vol_in_Ton": "6.04"
+ },
+ {
+  "Symbol": "LUBPAA5",
+  "ProductionYear": "2014",
+  "PrvsClose": "2115",
+  "Close": "2000",
+  "High": "2000",
+  "Low": "2000",
+  "Change": "115",
+  "Vol_in_Ton": "4.86",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA5",
+  "ProductionYear": "2015",
+  "PrvsClose": "2566",
+  "Close": "2527",
+  "High": "2707",
+  "Low": "2309",
+  "Change": "39",
+  "Vol_in_Ton": "50.68",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA4",
+  "ProductionYear": "2014",
+  "PrvsClose": "3160",
+  "Close": "3181",
+  "High": "3201",
+  "Low": "3162",
+  "Change": "21",
+  "Vol_in_Ton": "15.30",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA4",
+  "ProductionYear": "2015",
+  "PrvsClose": "3136",
+  "Close": "3173",
+  "High": "3450",
+  "Low": "2822",
+  "Change": "37",
+  "Vol_in_Ton": "82.09",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA3",
+  "ProductionYear": "2015",
+  "PrvsClose": "3836",
+  "Close": "3831",
+  "High": "4220",
+  "Low": "3464",
+  "Change": "5",
+  "Vol_in_Ton": "26.74",
+  "WarehouseName": "SarisCoffee"
+ },
+ {
+  "Symbol": "LUBPAA2",
+  "ProductionYear": "2015",
+  "PrvsClose": "4201",
+  "Close": "4273",
+  "High": "4375",
+  "Low": "4205",
+  "Change": "72",
+  "Vol_in_Ton": "12.75",
+  "WarehouseName": "SarisCoffee"
+ }
+]
