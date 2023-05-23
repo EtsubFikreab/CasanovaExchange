@@ -12,7 +12,6 @@ namespace CasanovaExchange.Controllers
         private readonly IUserRepository iuserrepository;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
-
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,IUserRepository iuserRepository)
         {
             this.iuserrepository=iuserRepository;

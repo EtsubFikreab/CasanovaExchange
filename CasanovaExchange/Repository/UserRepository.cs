@@ -6,6 +6,7 @@ namespace CasanovaExchange.Repository
     public class UserRepository : IUserRepository
     {
         private readonly UserManager<IdentityUser> userManager;
+        public int? CurrentUserId { get; set; }
 
         public UserRepository(UserManager<IdentityUser> userManager)
         {

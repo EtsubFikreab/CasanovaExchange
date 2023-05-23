@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CasanovaExchange.Models;
+using CasanovaExchange.Repository;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CasanovaExchange.Controllers
 {
     public class Trade : Controller
     {
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ICommodityRepository _commodityRepository;
+        public Trade(UserManager<IdentityUser> userManager, ICommodityRepository commodityRepository)
+        {
+            _userManager = userManager;
+            _commodityRepository = commodityRepository;
+        }
         // GET: Trade
         public ActionResult Index()
         {
-            return View();
+			return View();
         }
 
         // GET: Trade/Details/5
@@ -72,6 +82,21 @@ namespace CasanovaExchange.Controllers
         {
             try
             {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BuyProduct(int id, IFormCollection collection)
+        {
+            try
+            {
+                _userManager.GetUserId(User);
+
                 return RedirectToAction(nameof(Index));
             }
             catch

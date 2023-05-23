@@ -1,4 +1,6 @@
-﻿namespace CasanovaExchange.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CasanovaExchange.Models
 {
     public class Commodity
     {
@@ -8,5 +10,9 @@
         public string Description { get; set; }
         public Warehouse CommodityWarehouse { get; set; }
         public int ProductionYear { get; set; }
+        [NotMapped]
+        public IFormFile? commodityImage { get; set; }
+        public string? CommodityImagePath { get; set; }
+
     }
 }
