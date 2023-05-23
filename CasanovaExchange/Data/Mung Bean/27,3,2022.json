@@ -1,0 +1,47 @@
+[
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "Close": "7000",
+  "High": "7000",
+  "Low": "7000",
+  "Vol_in_Ton": "53.40",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "7100",
+  "High": "7100",
+  "Low": "7100",
+  "Vol_in_Ton": "15.00",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "7213",
+  "High": "7250",
+  "Low": "7200",
+  "Vol_in_Ton": "47.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "GMBG3",
+  "ProductionYear": "2015",
+  "Close": "5000",
+  "High": "5000",
+  "Low": "4999",
+  "Vol_in_Ton": "23.10",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "GMBG2",
+  "ProductionYear": "2015",
+  "Close": "5000",
+  "High": "5000",
+  "Low": "5000",
+  "Vol_in_Ton": "11.20",
+  "WarehouseName": "Gonder"
+ }
+]

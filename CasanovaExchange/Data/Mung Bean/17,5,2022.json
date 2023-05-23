@@ -1,0 +1,20 @@
+[
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "Close": "3950",
+  "High": "3950",
+  "Low": "3950",
+  "Vol_in_Ton": "40.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "6500",
+  "High": "6500",
+  "Low": "6500",
+  "Vol_in_Ton": "46.10",
+  "WarehouseName": "Kombolcha"
+ }
+]

@@ -1,0 +1,47 @@
+[
+ {
+  "Symbol": "WWSS5",
+  "ProductionYear": "2015",
+  "Close": "11000",
+  "High": "11000",
+  "Low": "11000",
+  "Vol_in_Ton": "31.20",
+  "WarehouseName": "Nekemte"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "Close": "12400",
+  "High": "12400",
+  "Low": "12400",
+  "Vol_in_Ton": "18.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "13053",
+  "High": "13100",
+  "Low": "13000",
+  "Vol_in_Ton": "35.70",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "12803",
+  "High": "12805",
+  "Low": "12800",
+  "Vol_in_Ton": "30.00",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13100",
+  "High": "13102",
+  "Low": "13100",
+  "Vol_in_Ton": "42.30",
+  "WarehouseName": "Gonder"
+ }
+]

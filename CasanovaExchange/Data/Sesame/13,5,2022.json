@@ -1,0 +1,74 @@
+[
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "Close": "11200",
+  "High": "11200",
+  "Low": "11200",
+  "Vol_in_Ton": "55.00",
+  "WarehouseName": "SarisGrain"
+ },
+ {
+  "Symbol": "WWSS4",
+  "ProductionYear": "2015",
+  "Close": "11800",
+  "High": "11800",
+  "Low": "11800",
+  "Vol_in_Ton": "10.70",
+  "WarehouseName": "WolaytaSodo Grain"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "Close": "12162",
+  "High": "12200",
+  "Low": "12100",
+  "Vol_in_Ton": "26.00",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "13773",
+  "High": "13800",
+  "Low": "13700",
+  "Vol_in_Ton": "48.30",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "13112",
+  "High": "13200",
+  "Low": "13000",
+  "Vol_in_Ton": "189.50",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13780",
+  "High": "13780",
+  "Low": "13780",
+  "Vol_in_Ton": "11.50",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "14000",
+  "High": "14000",
+  "Low": "14000",
+  "Vol_in_Ton": "19.90",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13176",
+  "High": "13200",
+  "Low": "13150",
+  "Vol_in_Ton": "12.00",
+  "WarehouseName": "Metema"
+ }
+]

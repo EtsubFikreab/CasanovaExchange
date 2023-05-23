@@ -1,0 +1,74 @@
+[
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "Close": "11150",
+  "High": "11150",
+  "Low": "11150",
+  "Vol_in_Ton": "7.20",
+  "WarehouseName": "Nekemte"
+ },
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "Close": "11000",
+  "High": "11000",
+  "Low": "11000",
+  "Vol_in_Ton": "7.00",
+  "WarehouseName": "SarisGrain"
+ },
+ {
+  "Symbol": "WWSS4",
+  "ProductionYear": "2015",
+  "Close": "11650",
+  "High": "11650",
+  "Low": "11650",
+  "Vol_in_Ton": "18.30",
+  "WarehouseName": "Nekemte"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "Close": "12900",
+  "High": "12900",
+  "Low": "12900",
+  "Vol_in_Ton": "15.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "13450",
+  "High": "13450",
+  "Low": "13450",
+  "Vol_in_Ton": "12.00",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "13550",
+  "High": "13550",
+  "Low": "13550",
+  "Vol_in_Ton": "7.50",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13550",
+  "High": "13550",
+  "Low": "13550",
+  "Vol_in_Ton": "40.00",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13700",
+  "High": "13700",
+  "Low": "13700",
+  "Vol_in_Ton": "14.60",
+  "WarehouseName": "Gonder"
+ }
+]

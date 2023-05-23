@@ -1,0 +1,29 @@
+[
+ {
+  "Symbol": "RWPA5",
+  "ProductionYear": "2015",
+  "Close": "3899",
+  "High": "3899",
+  "Low": "3899",
+  "Vol_in_Ton": "28.20",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "RWPA5",
+  "ProductionYear": "2015",
+  "Close": "4400",
+  "High": "4401",
+  "Low": "4400",
+  "Vol_in_Ton": "35.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "RWPA3",
+  "ProductionYear": "2015",
+  "Close": "4150",
+  "High": "4150",
+  "Low": "4150",
+  "Vol_in_Ton": "6.00",
+  "WarehouseName": "Kombolcha"
+ }
+]
