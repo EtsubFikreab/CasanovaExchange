@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CasanovaExchange.Controllers
 {
-    public class Trade : Controller
+    public class TradeController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ICommodityRepository _commodityRepository;
-        public Trade(UserManager<IdentityUser> userManager, ICommodityRepository commodityRepository)
+        public TradeController(UserManager<IdentityUser> userManager, ICommodityRepository commodityRepository)
         {
             _userManager = userManager;
             _commodityRepository = commodityRepository;
@@ -104,5 +104,16 @@ namespace CasanovaExchange.Controllers
                 return View();
             }
         }
-    }
+		public ActionResult ListWarehouses()
+		{
+            List<Warehouse> warehouses = _commodityRepository.GetWarehouseList();
+			return View(warehouses);
+		}
+        public ActionResult ListCommodities()
+		{
+            List<Commodity> commodities = _commodityRepository.GetCommodityList();
+
+			return View(commodities);
+		}
+	}
 }

@@ -29,5 +29,13 @@ namespace CasanovaExchange.Repository
             _context.CommodityTransactions.Add( commodityTransaction );
             return true;
         }
+        public List<Warehouse> GetWarehouseList()
+        {
+            return _context.Warehouse.ToList();
+        }
+        public List<Commodity> GetCommodityList()
+        {
+            return _context.Commodity.ToList();
+        }
     }
 }

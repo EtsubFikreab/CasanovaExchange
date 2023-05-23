@@ -1,0 +1,27 @@
+﻿@using CasanovaExchange.Models;
+@model List<Warehouse>
+@{
+	Layout = "_Layout";
+}
+<h4 class="display-4">All Warehouses</h4>
+
+<table class="table table-hover table-dark w-75">
+	<thead>
+		<tr>
+			<th scope="col">Warehouse ID</th>
+			<th scope="col">Warehouse City</th>
+			<th scope="col">Warehouse Code</th>
+		</tr>
+	</thead>
+	<tbody>
+
+			@foreach (var w in @Model)
+			{
+			<tr>
+				<th scope="row">@w.WarehouseId</th>
+				<td>@w.Name</td>
+				<td>@w.WarehouseCode</td>
+			</tr>
+			}
+	</tbody>
+</table>

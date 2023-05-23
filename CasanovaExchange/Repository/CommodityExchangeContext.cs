@@ -14,6 +14,8 @@ namespace CasanovaExchange.Repository
         public DbSet<Trade> CurrentTrade { get; set; }
         public DbSet<CommodityTransaction> CommodityTransactions { get; set; }
         public DbSet<Portfolio> Portfolio { get; set; }
+        public DbSet<Warehouse> Warehouse { get; set; }
+        public DbSet<Commodity> Commodity { get; set; }
 
     }
 }
