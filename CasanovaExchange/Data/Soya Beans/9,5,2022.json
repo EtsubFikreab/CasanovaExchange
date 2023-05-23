@@ -2,44 +2,36 @@
  {
   "Symbol": "SBGO3",
   "ProductionYear": "2015",
-  "PrvsClose": "3250",
   "Close": "3289",
   "High": "3300",
   "Low": "3270",
-  "Change": "39",
   "Vol_in_Ton": "76.40",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "SBGO2",
   "ProductionYear": "2015",
-  "PrvsClose": "3350",
   "Close": "3389",
   "High": "3389",
   "Low": "3389",
-  "Change": "39",
   "Vol_in_Ton": "25.00",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "SBGJ3",
   "ProductionYear": "2015",
-  "PrvsClose": "3300",
   "Close": "3301",
   "High": "3301",
   "Low": "3301",
-  "Change": "1",
   "Vol_in_Ton": "12.50",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "SBGJ2",
   "ProductionYear": "2015",
-  "PrvsClose": "3393",
   "Close": "3398",
   "High": "3401",
   "Low": "3395",
-  "Change": "5",
   "Vol_in_Ton": "229.90",
   "WarehouseName": "Bure"
  }

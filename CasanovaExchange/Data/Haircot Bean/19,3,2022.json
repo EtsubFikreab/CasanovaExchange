@@ -2,33 +2,27 @@
  {
   "Symbol": "RWPA4",
   "ProductionYear": "2015",
-  "PrvsClose": "3900",
   "Close": "3890",
   "High": "3895",
   "Low": "3887",
-  "Change": "10",
   "Vol_in_Ton": "36.00",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "RWPA4",
   "ProductionYear": "2015",
-  "PrvsClose": "4100",
   "Close": "4103",
   "High": "4103",
   "Low": "4103",
-  "Change": "3",
   "Vol_in_Ton": "10.50",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "RWPA3",
   "ProductionYear": "2015",
-  "PrvsClose": "4100",
   "Close": "4086",
   "High": "4100",
   "Low": "4050",
-  "Change": "14",
   "Vol_in_Ton": "34.90",
   "WarehouseName": "Bure"
  }

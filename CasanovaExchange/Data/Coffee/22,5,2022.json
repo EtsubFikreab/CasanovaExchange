@@ -2,99 +2,81 @@
  {
   "Symbol": "UJM4",
   "ProductionYear": "2015",
-  "PrvsClose": "3142",
   "Close": "3173",
   "High": "3173",
   "Low": "3173",
-  "Change": "31",
   "Vol_in_Ton": "3.16",
   "WarehouseName": "Jimma"
  },
  {
   "Symbol": "LWSD2",
   "ProductionYear": "2015",
-  "PrvsClose": "4114",
   "Close": "3951",
   "High": "3951",
   "Low": "3951",
-  "Change": "163",
   "Vol_in_Ton": "7.65",
   "WarehouseName": "Hawassa"
  },
  {
   "Symbol": "LWBP3",
   "ProductionYear": "2015",
-  "PrvsClose": "4169",
   "Close": "4202",
   "High": "4202",
   "Low": "4202",
-  "Change": "33",
   "Vol_in_Ton": "7.65",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LWBP2",
   "ProductionYear": "2015",
-  "PrvsClose": "4600",
   "Close": "4581",
   "High": "4860",
   "Low": "4450",
-  "Change": "19",
   "Vol_in_Ton": "14.96",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA5",
   "ProductionYear": "2015",
-  "PrvsClose": "2504",
   "Close": "2507",
   "High": "2755",
   "Low": "2400",
-  "Change": "3",
   "Vol_in_Ton": "92.28",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA4",
   "ProductionYear": "2014",
-  "PrvsClose": "3303",
   "Close": "3149",
   "High": "3149",
   "Low": "3149",
-  "Change": "154",
   "Vol_in_Ton": "5.10",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA4",
   "ProductionYear": "2015",
-  "PrvsClose": "3124",
   "Close": "3033",
   "High": "3275",
   "Low": "2865",
-  "Change": "91",
   "Vol_in_Ton": "56.10",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA3",
   "ProductionYear": "2015",
-  "PrvsClose": "3895",
   "Close": "3809",
   "High": "3858",
   "Low": "3739",
-  "Change": "86",
   "Vol_in_Ton": "17.85",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA2",
   "ProductionYear": "2015",
-  "PrvsClose": "4356",
   "Close": "4325",
   "High": "4369",
   "Low": "4299",
-  "Change": "31",
   "Vol_in_Ton": "30.60",
   "WarehouseName": "SarisCoffee"
  }

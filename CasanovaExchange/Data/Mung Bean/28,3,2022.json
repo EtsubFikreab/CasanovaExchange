@@ -2,99 +2,81 @@
  {
   "Symbol": "GMBS4",
   "ProductionYear": "2015",
-  "PrvsClose": "6390",
   "Close": "6298",
   "High": "6300",
   "Low": "6297",
-  "Change": "92",
   "Vol_in_Ton": "39.80",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "6999",
   "Close": "6900",
   "High": "6902",
   "Low": "6900",
-  "Change": "99",
   "Vol_in_Ton": "90.80",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "7000",
   "Close": "6998",
   "High": "6998",
   "Low": "6998",
-  "Change": "2",
   "Vol_in_Ton": "33.00",
   "WarehouseName": "Nazareth"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "5800",
   "Close": "5800",
   "High": "5800",
   "Low": "5800",
-  "Change": "0",
   "Vol_in_Ton": "6.50",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "7098",
   "Close": "7099",
   "High": "7100",
   "Low": "7098",
-  "Change": "1",
   "Vol_in_Ton": "15.00",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "7213",
   "Close": "7300",
   "High": "7300",
   "Low": "7300",
-  "Change": "87",
   "Vol_in_Ton": "38.00",
   "WarehouseName": "Nazareth"
  },
  {
   "Symbol": "GMBG3",
   "ProductionYear": "2015",
-  "PrvsClose": "5000",
   "Close": "4500",
   "High": "4500",
   "Low": "4500",
-  "Change": "500",
   "Vol_in_Ton": "5.00",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "GMBG3",
   "ProductionYear": "2015",
-  "PrvsClose": "4402",
   "Close": "3450",
   "High": "3450",
   "Low": "3450",
-  "Change": "952",
   "Vol_in_Ton": "10.00",
   "WarehouseName": "Metema"
  },
  {
   "Symbol": "GMBG2",
   "ProductionYear": "2015",
-  "PrvsClose": "5000",
   "Close": "5000",
   "High": "5000",
   "Low": "5000",
-  "Change": "0",
   "Vol_in_Ton": "5.00",
   "WarehouseName": "Gonder"
  }

@@ -2,33 +2,27 @@
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "3950",
   "Close": "3948",
   "High": "3950",
   "Low": "3947",
-  "Change": "2",
   "Vol_in_Ton": "40.00",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "6296",
   "Close": "6300",
   "High": "6300",
   "Low": "6300",
-  "Change": "4",
   "Vol_in_Ton": "87.20",
   "WarehouseName": "WolaytaSodo Grain"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "7000",
   "Close": "6400",
   "High": "6400",
   "Low": "6400",
-  "Change": "600",
   "Vol_in_Ton": "6.60",
   "WarehouseName": "WolaytaSodo Grain"
  }

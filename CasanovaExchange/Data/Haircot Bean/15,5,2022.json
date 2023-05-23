@@ -2,33 +2,27 @@
  {
   "Symbol": "RWPALG",
   "ProductionYear": "2015",
-  "PrvsClose": "4100",
   "Close": "4100",
   "High": "4100",
   "Low": "4098",
-  "Change": "0",
   "Vol_in_Ton": "75.60",
   "WarehouseName": "Nazareth"
  },
  {
   "Symbol": "RWPA5",
   "ProductionYear": "2015",
-  "PrvsClose": "4500",
   "Close": "4500",
   "High": "4500",
   "Low": "4499",
-  "Change": "0",
   "Vol_in_Ton": "20.00",
   "WarehouseName": "Nazareth"
  },
  {
   "Symbol": "RWPA4",
   "ProductionYear": "2015",
-  "PrvsClose": "4050",
   "Close": "4051",
   "High": "4052",
   "Low": "4050",
-  "Change": "1",
   "Vol_in_Ton": "10.00",
   "WarehouseName": "Bure"
  }

@@ -2,22 +2,18 @@
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "6400",
   "Close": "6400",
   "High": "6400",
   "Low": "6400",
-  "Change": "0",
   "Vol_in_Ton": "40.00",
   "WarehouseName": "WolaytaSodo Grain"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "6600",
   "Close": "6600",
   "High": "6600",
   "Low": "6600",
-  "Change": "0",
   "Vol_in_Ton": "22.90",
   "WarehouseName": "Kombolcha"
  }

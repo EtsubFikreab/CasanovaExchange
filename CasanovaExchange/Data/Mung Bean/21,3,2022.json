@@ -2,77 +2,63 @@
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "6950",
   "Close": "7048",
   "High": "7100",
   "Low": "7000",
-  "Change": "98",
   "Vol_in_Ton": "41.80",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "7100",
   "Close": "7101",
   "High": "7105",
   "Low": "7100",
-  "Change": "1",
   "Vol_in_Ton": "22.00",
   "WarehouseName": "Nazareth"
  },
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "6200",
   "Close": "6800",
   "High": "6800",
   "Low": "6799",
-  "Change": "600",
   "Vol_in_Ton": "34.10",
   "WarehouseName": "WolaytaSodo Grain"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "7000",
   "Close": "7100",
   "High": "7100",
   "Low": "7100",
-  "Change": "100",
   "Vol_in_Ton": "29.60",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "6600",
   "Close": "7024",
   "High": "7200",
   "Low": "6999",
-  "Change": "424",
   "Vol_in_Ton": "89.50",
   "WarehouseName": "WolaytaSodo Grain"
  },
  {
   "Symbol": "GMBG3",
   "ProductionYear": "2015",
-  "PrvsClose": "4810",
   "Close": "4800",
   "High": "4800",
   "Low": "4800",
-  "Change": "10",
   "Vol_in_Ton": "35.50",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "GMBG2",
   "ProductionYear": "2015",
-  "PrvsClose": "5100",
   "Close": "5000",
   "High": "5000",
   "Low": "5000",
-  "Change": "100",
   "Vol_in_Ton": "11.60",
   "WarehouseName": "Gonder"
  }

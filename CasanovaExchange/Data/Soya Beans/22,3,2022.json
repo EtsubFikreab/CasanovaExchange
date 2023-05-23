@@ -2,44 +2,36 @@
  {
   "Symbol": "SBGO3",
   "ProductionYear": "2015",
-  "PrvsClose": "3350",
   "Close": "3000",
   "High": "3000",
   "Low": "3000",
-  "Change": "350",
   "Vol_in_Ton": "14.40",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBGO2",
   "ProductionYear": "2015",
-  "PrvsClose": "3052",
   "Close": "3102",
   "High": "3109",
   "Low": "3098",
-  "Change": "50",
   "Vol_in_Ton": "34.70",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBGO1",
   "ProductionYear": "2015",
-  "PrvsClose": "3100",
   "Close": "3200",
   "High": "3200",
   "Low": "3200",
-  "Change": "100",
   "Vol_in_Ton": "5.00",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBAS3",
   "ProductionYear": "2015",
-  "PrvsClose": "3180",
   "Close": "3300",
   "High": "3300",
   "Low": "3300",
-  "Change": "120",
   "Vol_in_Ton": "5.00",
   "WarehouseName": "Pawe"
  }

@@ -2,117 +2,95 @@
  {
   "Symbol": "UBM5",
   "ProductionYear": "2015",
-  "PrvsClose": "0",
   "Close": "2953",
   "High": "2953",
   "Low": "2953",
-  "Change": "0",
   "Vol_in_Ton": "3.79"
  },
  {
   "Symbol": "LWGD2",
   "ProductionYear": "2015",
-  "PrvsClose": "4177",
   "Close": "3775",
   "High": "3775",
   "Low": "3775",
-  "Change": "402",
   "Vol_in_Ton": "17.85"
  },
  {
   "Symbol": "LWBP2",
   "ProductionYear": "2014",
-  "PrvsClose": "4458",
   "Close": "4904",
   "High": "4904",
   "Low": "4904",
-  "Change": "446",
   "Vol_in_Ton": "5.10",
   "Column9": "SarisCoffee"
  },
  {
   "Symbol": "LWBP1",
   "ProductionYear": "2014",
-  "PrvsClose": "5500",
   "Close": "5279",
   "High": "5279",
   "Low": "5279",
-  "Change": "221",
   "Vol_in_Ton": "2.82",
   "Column9": "SarisCoffee"
  },
  {
   "Symbol": "LWBM1",
   "ProductionYear": "2015",
-  "PrvsClose": "3601",
   "Close": "3750",
   "High": "3750",
   "Low": "3750",
-  "Change": "149",
   "Vol_in_Ton": "8.60"
  },
  {
   "Symbol": "LUGD1",
   "ProductionYear": "2014",
-  "PrvsClose": "3700",
   "Close": "3809",
   "High": "3809",
   "Low": "3809",
-  "Change": "109",
   "Vol_in_Ton": "12.75"
  },
  {
   "Symbol": "LUBPAA5",
   "ProductionYear": "2014",
-  "PrvsClose": "2187",
   "Close": "2037",
   "High": "2060",
   "Low": "1968",
-  "Change": "150",
   "Vol_in_Ton": "38.25",
   "Column9": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA4",
   "ProductionYear": "2014",
-  "PrvsClose": "3228",
   "Close": "3296",
   "High": "3469",
   "Low": "2930",
-  "Change": "68",
   "Vol_in_Ton": "64.23",
   "Column9": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA3",
   "ProductionYear": "2014",
-  "PrvsClose": "3805",
   "Close": "3735",
   "High": "4061",
   "Low": "3559",
-  "Change": "70",
   "Vol_in_Ton": "36.31",
   "Column9": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA2",
   "ProductionYear": "2014",
-  "PrvsClose": "4083",
   "Close": "4103",
   "High": "4103",
   "Low": "4103",
-  "Change": "20",
   "Vol_in_Ton": "5.10",
   "Column9": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA1",
   "ProductionYear": "2014",
-  "PrvsClose": "4731",
   "Close": "5105",
   "High": "5105",
   "Low": "5105",
-  "Change": "374",
   "Vol_in_Ton": "5.92",
   "Column9": "SarisCoffee"
  }

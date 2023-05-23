@@ -2,99 +2,81 @@
  {
   "Symbol": "SBGO4",
   "ProductionYear": "2015",
-  "PrvsClose": "3161",
   "Close": "2851",
   "High": "2851",
   "Low": "2851",
-  "Change": "310",
   "Vol_in_Ton": "7.00",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBGO3",
   "ProductionYear": "2015",
-  "PrvsClose": "3100",
   "Close": "3133",
   "High": "3200",
   "Low": "3100",
-  "Change": "33",
   "Vol_in_Ton": "30.00",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "SBGO2",
   "ProductionYear": "2015",
-  "PrvsClose": "3210",
   "Close": "3232",
   "High": "3300",
   "Low": "3215",
-  "Change": "22",
   "Vol_in_Ton": "76.20",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "SBGO1",
   "ProductionYear": "2015",
-  "PrvsClose": "3200",
   "Close": "3152",
   "High": "3153",
   "Low": "3150",
-  "Change": "48",
   "Vol_in_Ton": "51.40",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBGJ3",
   "ProductionYear": "2015",
-  "PrvsClose": "3200",
   "Close": "3177",
   "High": "3200",
   "Low": "3150",
-  "Change": "23",
   "Vol_in_Ton": "28.00",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "SBGJ2",
   "ProductionYear": "2015",
-  "PrvsClose": "3400",
   "Close": "3267",
   "High": "3301",
   "Low": "3200",
-  "Change": "133",
   "Vol_in_Ton": "338.50",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "SBAS3",
   "ProductionYear": "2015",
-  "PrvsClose": "3300",
   "Close": "3097",
   "High": "3100",
   "Low": "3080",
-  "Change": "203",
   "Vol_in_Ton": "125.20",
   "WarehouseName": "Pawe"
  },
  {
   "Symbol": "SBAS2",
   "ProductionYear": "2015",
-  "PrvsClose": "3167",
   "Close": "3155",
   "High": "3155",
   "Low": "3155",
-  "Change": "12",
   "Vol_in_Ton": "15.50",
   "WarehouseName": "Pawe"
  },
  {
   "Symbol": "SBAS1",
   "ProductionYear": "2015",
-  "PrvsClose": "3561",
   "Close": "3200",
   "High": "3200",
   "Low": "3200",
-  "Change": "361",
   "Vol_in_Ton": "20.00",
   "WarehouseName": "Pawe"
  }

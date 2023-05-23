@@ -2,33 +2,27 @@
  {
   "Symbol": "SBGO3",
   "ProductionYear": "2015",
-  "PrvsClose": "3110",
   "Close": "3111",
   "High": "3111",
   "Low": "3111",
-  "Change": "1",
   "Vol_in_Ton": "34.00",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBGO2",
   "ProductionYear": "2015",
-  "PrvsClose": "3232",
   "Close": "3303",
   "High": "3305",
   "Low": "3300",
-  "Change": "71",
   "Vol_in_Ton": "16.00",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "SBAS2",
   "ProductionYear": "2015",
-  "PrvsClose": "3155",
   "Close": "3209",
   "High": "3250",
   "Low": "3200",
-  "Change": "54",
   "Vol_in_Ton": "123.40",
   "WarehouseName": "Pawe"
  }

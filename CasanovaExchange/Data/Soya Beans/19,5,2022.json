@@ -2,22 +2,18 @@
  {
   "Symbol": "SBGO3",
   "ProductionYear": "2015",
-  "PrvsClose": "2986",
   "Close": "2750",
   "High": "2750",
   "Low": "2750",
-  "Change": "236",
   "Vol_in_Ton": "6.50",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "SBGO2",
   "ProductionYear": "2015",
-  "PrvsClose": "2999",
   "Close": "2800",
   "High": "2800",
   "Low": "2800",
-  "Change": "199",
   "Vol_in_Ton": "5.40",
   "WarehouseName": "Abrehajira"
  }

@@ -2,22 +2,18 @@
  {
   "Symbol": "GMBS3",
   "ProductionYear": "2015",
-  "PrvsClose": "7048",
   "Close": "7000",
   "High": "7000",
   "Low": "7000",
-  "Change": "48",
   "Vol_in_Ton": "38.20",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "GMBS2",
   "ProductionYear": "2015",
-  "PrvsClose": "7106",
   "Close": "7100",
   "High": "7100",
   "Low": "7100",
-  "Change": "6",
   "Vol_in_Ton": "6.00",
   "WarehouseName": "Nazareth"
  }

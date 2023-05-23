@@ -2,66 +2,54 @@
  {
   "Symbol": "WWSS5",
   "ProductionYear": "2015",
-  "PrvsClose": "11000",
   "Close": "11200",
   "High": "11200",
   "Low": "11200",
-  "Change": "200",
   "Vol_in_Ton": "15.00",
   "WarehouseName": "WolaytaSodo Grain"
  },
  {
   "Symbol": "WWSS4",
   "ProductionYear": "2015",
-  "PrvsClose": "11300",
   "Close": "11500",
   "High": "11500",
   "Low": "11500",
-  "Change": "200",
   "Vol_in_Ton": "18.90",
   "WarehouseName": "SarisGrain"
  },
  {
   "Symbol": "WHGS3",
   "ProductionYear": "2015",
-  "PrvsClose": "12850",
   "Close": "12850",
   "High": "12850",
   "Low": "12850",
-  "Change": "0",
   "Vol_in_Ton": "6.60",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "WHGS3",
   "ProductionYear": "2015",
-  "PrvsClose": "12800",
   "Close": "12857",
   "High": "12870",
   "Low": "12850",
-  "Change": "57",
   "Vol_in_Ton": "30.00",
   "WarehouseName": "Dansha"
  },
  {
   "Symbol": "WHGS2",
   "ProductionYear": "2015",
-  "PrvsClose": "12878",
   "Close": "12850",
   "High": "12850",
   "Low": "12850",
-  "Change": "28",
   "Vol_in_Ton": "11.90",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "WHGS2",
   "ProductionYear": "2015",
-  "PrvsClose": "12889",
   "Close": "12896",
   "High": "12900",
   "Low": "12890",
-  "Change": "7",
   "Vol_in_Ton": "28.20",
   "WarehouseName": "Dansha"
  }

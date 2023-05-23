@@ -2,55 +2,45 @@
  {
   "Symbol": "LWSD1",
   "ProductionYear": "2015",
-  "PrvsClose": "4619",
   "Close": "4626",
   "High": "4626",
   "Low": "4626",
-  "Change": "7",
   "Vol_in_Ton": "10.20",
   "WarehouseName": "Hawassa"
  },
  {
   "Symbol": "LWBP2",
   "ProductionYear": "2014",
-  "PrvsClose": "4720",
   "Close": "4903",
   "High": "4940",
   "Low": "4848",
-  "Change": "183",
   "Vol_in_Ton": "17.85",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA5",
   "ProductionYear": "2014",
-  "PrvsClose": "2182",
   "Close": "2229",
   "High": "2401",
   "Low": "1963",
-  "Change": "47",
   "Vol_in_Ton": "101.12",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA4",
   "ProductionYear": "2014",
-  "PrvsClose": "3324",
   "Close": "3304",
   "High": "3657",
   "Low": "2991",
-  "Change": "20",
   "Vol_in_Ton": "101.83",
   "WarehouseName": "SarisCoffee"
  },
  {
   "Symbol": "LUBPAA3",
   "ProductionYear": "2014",
-  "PrvsClose": "3681",
   "Close": "3764",
   "High": "3903",
   "Low": "3677",
-  "Change": "83",
   "Vol_in_Ton": "35.82",
   "WarehouseName": "SarisCoffee"
  }

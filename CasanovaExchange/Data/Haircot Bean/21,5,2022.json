@@ -2,22 +2,18 @@
  {
   "Symbol": "RWPALG",
   "ProductionYear": "2015",
-  "PrvsClose": "3600",
   "Close": "3589",
   "High": "3589",
   "Low": "3589",
-  "Change": "11",
   "Vol_in_Ton": "25.20",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "RWPALG",
   "ProductionYear": "2015",
-  "PrvsClose": "4100",
   "Close": "4101",
   "High": "4101",
   "Low": "4101",
-  "Change": "1",
   "Vol_in_Ton": "20.00",
   "WarehouseName": "Nazareth"
  }

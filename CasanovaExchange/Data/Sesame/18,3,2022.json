@@ -2,110 +2,90 @@
  {
   "Symbol": "WWSS4",
   "ProductionYear": "2015",
-  "PrvsClose": "11438",
   "Close": "11455",
   "High": "11455",
   "Low": "11455",
-  "Change": "17",
   "Vol_in_Ton": "15.90",
   "WarehouseName": "Bure"
  },
  {
   "Symbol": "WHGS5",
   "ProductionYear": "2015",
-  "PrvsClose": "12900",
   "Close": "11500",
   "High": "11500",
   "Low": "11500",
-  "Change": "1400",
   "Vol_in_Ton": "5.90",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "WHGS4",
   "ProductionYear": "2015",
-  "PrvsClose": "12700",
   "Close": "12700",
   "High": "12700",
   "Low": "12700",
-  "Change": "0",
   "Vol_in_Ton": "30.40",
   "WarehouseName": "Gonder"
  },
  {
   "Symbol": "WHGS3",
   "ProductionYear": "2015",
-  "PrvsClose": "12780",
   "Close": "12850",
   "High": "12850",
   "Low": "12850",
-  "Change": "70",
   "Vol_in_Ton": "5.00",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "WHGS3",
   "ProductionYear": "2015",
-  "PrvsClose": "12763",
   "Close": "12799",
   "High": "12799",
   "Low": "12799",
-  "Change": "36",
   "Vol_in_Ton": "21.30",
   "WarehouseName": "Dansha"
  },
  {
   "Symbol": "WHGS3",
   "ProductionYear": "2015",
-  "PrvsClose": "12822",
   "Close": "12616",
   "High": "12651",
   "Low": "12600",
-  "Change": "206",
   "Vol_in_Ton": "52.20",
   "WarehouseName": "Metema"
  },
  {
   "Symbol": "WHGS3",
   "ProductionYear": "2015",
-  "PrvsClose": "12730",
   "Close": "12650",
   "High": "12650",
   "Low": "12650",
-  "Change": "80",
   "Vol_in_Ton": "27.10",
   "WarehouseName": "Pawe"
  },
  {
   "Symbol": "WHGS2",
   "ProductionYear": "2015",
-  "PrvsClose": "12801",
   "Close": "12878",
   "High": "12899",
   "Low": "12860",
-  "Change": "77",
   "Vol_in_Ton": "69.30",
   "WarehouseName": "Abrehajira"
  },
  {
   "Symbol": "WHGS2",
   "ProductionYear": "2015",
-  "PrvsClose": "12820",
   "Close": "12850",
   "High": "12850",
   "Low": "12850",
-  "Change": "30",
   "Vol_in_Ton": "69.50",
   "WarehouseName": "Dansha"
  },
  {
   "Symbol": "WHGS2",
   "ProductionYear": "2015",
-  "PrvsClose": "13221",
   "Close": "13200",
   "High": "13200",
   "Low": "13200",
-  "Change": "21",
   "Vol_in_Ton": "30.80",
   "WarehouseName": "Gonder"
  }

@@ -2,22 +2,18 @@
  {
   "Symbol": "RWPA5",
   "ProductionYear": "2015",
-  "PrvsClose": "4150",
   "Close": "4130",
   "High": "4150",
   "Low": "4100",
-  "Change": "20",
   "Vol_in_Ton": "61.60",
   "WarehouseName": "Kombolcha"
  },
  {
   "Symbol": "RWPA4",
   "ProductionYear": "2015",
-  "PrvsClose": "4240",
   "Close": "4201",
   "High": "4202",
   "Low": "4200",
-  "Change": "39",
   "Vol_in_Ton": "23.00",
   "WarehouseName": "Kombolcha"
  }
