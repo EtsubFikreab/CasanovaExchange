@@ -110,6 +110,7 @@ namespace CasanovaExchange.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index","Home");
         }
+
         // a function that randomlt selects the profile picture
         public string GetRandomImage(string folderPath)
         {
