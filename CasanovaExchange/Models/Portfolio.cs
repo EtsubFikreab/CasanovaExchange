@@ -8,7 +8,6 @@ namespace CasanovaExchange.Models
         public IdentityUser User { get; set; }
         public List <CommodityTransaction> CommodityTransaction { get; set; }
         public List <CommodityListing> CommodityListings { get; set; }
-        public List <Commodity> Commodities { get; set; }
         public Wallet Wallet { get; set; }
     }
 }

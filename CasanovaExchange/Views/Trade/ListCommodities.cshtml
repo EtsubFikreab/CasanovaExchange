@@ -2,22 +2,23 @@
 @model List<Commodity>
 @{
 	Layout = "_Layout";
+	ViewData["Title"] = "List Commodities";
+	var commodityList = ViewBag.commodityLs;
 }
-<h4 class="display-4">All Commodities</h4>
+<h4 class="display-4 mb-4">All Commodities</h4>
 
-<table class="table table-hover table-dark w-75">
-	<thead>
-		<tr>
-			<th scope="col">Name</th>
-		</tr>
-	</thead>
-	<tbody>
-
-		@foreach (var c in @Model)
-		{
-			<tr>
-				<th scope="row">@c.Name</th>
-			</tr>
+@foreach (var c in commodityList)
+{
+	<a class="commodity-list p-2 card w-25 text-white mb-2" asp-controller="Trade" asp-action="Index">
+		@c
+	</a>
+}
+<style>
+	.commodity-list {
+		background-color: #5D737E;
+		text-decoration: none;
+	}
+		.commodity-list:hover {
+			background-color: #2E4057;
 		}
-	</tbody>
-</table>
+</style>

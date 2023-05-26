@@ -6,7 +6,7 @@ namespace CasanovaExchange.Repository
     {
         public bool buyCommodity(int id, double PurchaseQuantity, string userId);
         public List<Warehouse> GetWarehouseList();
-        public List<Commodity> GetCommodityList();
+        public List<string> GetCommodityList();
 
 	}
 }
