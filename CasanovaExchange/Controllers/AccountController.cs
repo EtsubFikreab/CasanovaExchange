@@ -3,21 +3,30 @@ using Microsoft.AspNetCore.Mvc;
 using CasanovaExchange.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
-using System;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.CodeAnalysis.Differencing;
+using NuGet.Protocol;
+
 namespace CasanovaExchange.Controllers
 {
-    
+
     public class AccountController : Controller
     {
         private readonly IUserRepository iuserrepository;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+
+       // private readonly IHttpContextAccessor httpContextAccessor;
+       
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,IUserRepository iuserRepository)
         {
-            this.iuserrepository=iuserRepository;
+            this.iuserrepository = iuserRepository;
             this.userManager = userManager;
             this.signInManager = signInManager;
+           
         }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Signin()
@@ -44,6 +53,7 @@ namespace CasanovaExchange.Controllers
                     var result = await signInManager.PasswordSignInAsync(user, signInModel.Password, false, false);
                     if (result.Succeeded)
                     {
+                        
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -83,11 +93,15 @@ namespace CasanovaExchange.Controllers
             {
                 UserName = signupModel.Email,
                 Email = signupModel.Email
+                
             };
 
             var result = await userManager.CreateAsync(newUser, signupModel.Password);
             if (result.Succeeded)
+            {
+                TempData["message"] = "register successfull";
                 return RedirectToAction("Index", "Home");
+            }
             return View(signupModel);
         }
         [HttpPost]

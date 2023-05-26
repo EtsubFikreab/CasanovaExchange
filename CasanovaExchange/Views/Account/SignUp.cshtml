@@ -36,4 +36,10 @@
     <div class="form-group">
         <input type="submit" value="SignUp" class="btn btn-primary bm-2" />
     </div>
+    @if (TempData["message"] != null)
+    {
+        <div class="col-md-12 alert alert-success">
+            <span> @TempData["message"]</span>
+        </div>
+    }
 </form>
