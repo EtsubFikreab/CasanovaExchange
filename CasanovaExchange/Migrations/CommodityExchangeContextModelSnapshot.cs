@@ -52,7 +52,7 @@ namespace CasanovaExchange.Migrations
 
                     b.HasIndex("CommodityWarehouseWarehouseId");
 
-                    b.ToTable("commodity");
+                    b.ToTable("commodity", (string)null);
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
@@ -75,7 +75,7 @@ namespace CasanovaExchange.Migrations
 
                     b.HasIndex("WalletId");
 
-                    b.ToTable("portfolio");
+                    b.ToTable("portfolio", (string)null);
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Transaction", b =>
@@ -110,7 +110,7 @@ namespace CasanovaExchange.Migrations
 
                     b.HasIndex("commodityId");
 
-                    b.ToTable("Transaction");
+                    b.ToTable("Transaction", (string)null);
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Wallet", b =>
@@ -126,7 +126,7 @@ namespace CasanovaExchange.Migrations
 
                     b.HasKey("WalletId");
 
-                    b.ToTable("Wallet");
+                    b.ToTable("Wallet", (string)null);
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Warehouse", b =>
@@ -147,7 +147,7 @@ namespace CasanovaExchange.Migrations
 
                     b.HasKey("WarehouseId");
 
-                    b.ToTable("Warehouse");
+                    b.ToTable("Warehouse", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
