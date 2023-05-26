@@ -1,0 +1,29 @@
+[
+ {
+  "Symbol": "SBGO2",
+  "ProductionYear": "2015",
+  "Close": "3090",
+  "High": "3100",
+  "Low": "3050",
+  "Vol_in_Ton": "120.00",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "SBGJ2",
+  "ProductionYear": "2015",
+  "Close": "3049",
+  "High": "3050",
+  "Low": "3048",
+  "Vol_in_Ton": "80.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "SBAS2",
+  "ProductionYear": "2015",
+  "Close": "2950",
+  "High": "2950",
+  "Low": "2950",
+  "Vol_in_Ton": "31.00",
+  "WarehouseName": "Pawe"
+ }
+]

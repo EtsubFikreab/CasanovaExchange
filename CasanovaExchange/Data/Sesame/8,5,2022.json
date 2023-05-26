@@ -1,0 +1,20 @@
+[
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "Close": "12000",
+  "High": "12000",
+  "Low": "12000",
+  "Vol_in_Ton": "14.90",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13500",
+  "High": "13500",
+  "Low": "13500",
+  "Vol_in_Ton": "45.90",
+  "WarehouseName": "Gonder"
+ }
+]

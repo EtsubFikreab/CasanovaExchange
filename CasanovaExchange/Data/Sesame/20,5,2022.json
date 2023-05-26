@@ -1,0 +1,38 @@
+[
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "Close": "12900",
+  "High": "12900",
+  "Low": "12900",
+  "Vol_in_Ton": "5.70",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "13331",
+  "High": "13450",
+  "Low": "13299",
+  "Vol_in_Ton": "90.00",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13580",
+  "High": "13600",
+  "Low": "13550",
+  "Vol_in_Ton": "25.00",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13760",
+  "High": "13760",
+  "Low": "13760",
+  "Vol_in_Ton": "8.20",
+  "WarehouseName": "Gonder"
+ }
+]

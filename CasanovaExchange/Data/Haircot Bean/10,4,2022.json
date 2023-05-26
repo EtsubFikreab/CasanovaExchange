@@ -1,0 +1,47 @@
+[
+ {
+  "Symbol": "RWPALG",
+  "ProductionYear": "2015",
+  "Close": "3955",
+  "High": "3960",
+  "Low": "3950",
+  "Vol_in_Ton": "72.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "RWPA5",
+  "ProductionYear": "2015",
+  "Close": "4250",
+  "High": "4250",
+  "Low": "4250",
+  "Vol_in_Ton": "18.90",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "RWPA4",
+  "ProductionYear": "2015",
+  "Close": "3900",
+  "High": "3900",
+  "Low": "3900",
+  "Vol_in_Ton": "16.00",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "RWPA4",
+  "ProductionYear": "2015",
+  "Close": "4151",
+  "High": "4154",
+  "Low": "4150",
+  "Vol_in_Ton": "26.60",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "RWPA4",
+  "ProductionYear": "2015",
+  "Close": "4300",
+  "High": "4300",
+  "Low": "4300",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Nazareth"
+ }
+]

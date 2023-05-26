@@ -1,0 +1,56 @@
+[
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "Close": "6896",
+  "High": "6901",
+  "Low": "6880",
+  "Vol_in_Ton": "62.00",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBS3",
+  "ProductionYear": "2015",
+  "Close": "6948",
+  "High": "6948",
+  "Low": "6948",
+  "Vol_in_Ton": "30.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "5850",
+  "High": "5850",
+  "Low": "5850",
+  "Vol_in_Ton": "16.60",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "7000",
+  "High": "7000",
+  "Low": "7000",
+  "Vol_in_Ton": "32.30",
+  "WarehouseName": "Kombolcha"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "7100",
+  "High": "7100",
+  "Low": "7100",
+  "Vol_in_Ton": "6.00",
+  "WarehouseName": "Nazareth"
+ },
+ {
+  "Symbol": "GMBS2",
+  "ProductionYear": "2015",
+  "Close": "6900",
+  "High": "6900",
+  "Low": "6900",
+  "Vol_in_Ton": "40.00",
+  "WarehouseName": "SarisGrain"
+ }
+]

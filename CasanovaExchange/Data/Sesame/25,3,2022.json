@@ -1,0 +1,119 @@
+[
+ {
+  "Symbol": "WWSSUG",
+  "ProductionYear": "2015",
+  "Close": "10500",
+  "High": "10500",
+  "Low": "10500",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "SarisGrain"
+ },
+ {
+  "Symbol": "WWSS4",
+  "ProductionYear": "2015",
+  "Close": "11550",
+  "High": "11550",
+  "Low": "11550",
+  "Vol_in_Ton": "28.50",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "Close": "11000",
+  "High": "11000",
+  "Low": "11000",
+  "Vol_in_Ton": "6.20",
+  "WarehouseName": "Assosa"
+ },
+ {
+  "Symbol": "WWSS3",
+  "ProductionYear": "2015",
+  "Close": "11650",
+  "High": "11650",
+  "Low": "11650",
+  "Vol_in_Ton": "16.40",
+  "WarehouseName": "Bure"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "Close": "12706",
+  "High": "12730",
+  "Low": "12690",
+  "Vol_in_Ton": "18.60",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS4",
+  "ProductionYear": "2015",
+  "Close": "12200",
+  "High": "12200",
+  "Low": "12200",
+  "Vol_in_Ton": "10.00",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "12750",
+  "High": "12750",
+  "Low": "12750",
+  "Vol_in_Ton": "23.50",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "12980",
+  "High": "12980",
+  "Low": "12980",
+  "Vol_in_Ton": "7.70",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS3",
+  "ProductionYear": "2015",
+  "Close": "12700",
+  "High": "12700",
+  "Low": "12700",
+  "Vol_in_Ton": "30.00",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "12889",
+  "High": "12900",
+  "Low": "12870",
+  "Vol_in_Ton": "86.70",
+  "WarehouseName": "Dansha"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "13005",
+  "High": "13012",
+  "Low": "13000",
+  "Vol_in_Ton": "31.20",
+  "WarehouseName": "Gonder"
+ },
+ {
+  "Symbol": "WHGS2",
+  "ProductionYear": "2015",
+  "Close": "12701",
+  "High": "12701",
+  "Low": "12701",
+  "Vol_in_Ton": "5.00",
+  "WarehouseName": "Metema"
+ },
+ {
+  "Symbol": "RDSS3",
+  "ProductionYear": "2015",
+  "Close": "10850",
+  "High": "10850",
+  "Low": "10850",
+  "Vol_in_Ton": "6.00",
+  "WarehouseName": "SarisGrain"
+ }
+]
