@@ -7,6 +7,8 @@ using System.Security.Claims;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.CodeAnalysis.Differencing;
 using NuGet.Protocol;
+using Microsoft.AspNetCore.Rewrite;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CasanovaExchange.Controllers
 {
@@ -16,14 +18,18 @@ namespace CasanovaExchange.Controllers
         private readonly IUserRepository iuserrepository;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
-
+        private readonly RoleManager<IdentityRole> rolemanager;
        // private readonly IHttpContextAccessor httpContextAccessor;
-       
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,IUserRepository iuserRepository)
+       private readonly IServiceProvider serviceProvider;
+
+        public AccountController(UserManager<IdentityUser> userManager, IServiceProvider serviceProvider
+,SignInManager<IdentityUser> signInManager,IUserRepository iuserRepository, RoleManager<IdentityRole> roleManager)
         {
             this.iuserrepository = iuserRepository;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.rolemanager = rolemanager;
+            this.serviceProvider = serviceProvider;
            
         }
 
@@ -99,6 +105,16 @@ namespace CasanovaExchange.Controllers
             var result = await userManager.CreateAsync(newUser, signupModel.Password);
             if (result.Succeeded)
             {
+                //checks if that Role exists if it doesn't it creates it
+
+				var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+				var roleExist = await RoleManager.RoleExistsAsync(signupModel.role);
+                if (!roleExist)
+                {
+                    await RoleManager.CreateAsync(new IdentityRole(signupModel.role));
+                }
+
+				await userManager.AddToRoleAsync(newUser, signupModel.role);
                 TempData["message"] = "register successfull";
                 return RedirectToAction("Index", "Home");
             }
@@ -209,9 +225,7 @@ namespace CasanovaExchange.Controllers
             }
             if (settingMV.Password != null)
             {
-                //  var currentpassword = user.PasswordHash;
-                // var newpassword = settingMV.Password
-                //  var usercheck = await userManager.ChangePasswordAsync(user, PasswordHash, settingMV.Password);
+                
                 userManager.ChangePasswordAsync(user, user.PasswordHash, settingMV.Password);
             }
             if (settingMV.phoneNumber != null)

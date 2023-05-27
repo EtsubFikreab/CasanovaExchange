@@ -23,52 +23,91 @@
 			<!--this is the place authenticated users only display the sidebar-->
 			@if (User.Identity.IsAuthenticated)
 			{
-
-				<hr>
-				<ul class="nav nav-pills flex-column mb-auto">
-					<li>
-						<a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-white">
-							<img src="~/icons/icons8_Circle_Chart_128px.png" style="width: 30px;" />
-							Portfolio
-						</a>
-					</li>
-					<li>
-						<a asp-area="" asp-controller="Trade" asp-action="Index" class="nav-link text-white">
-							<img class="flex-row align-items-center" src="~/icons/icons8_bullish_trade_128px.png" style="width: 30px;" />
-							Trade
-						</a>
-					</li>
-					<li>
-						<a class="nav-link text-white">
-							<img class="flex-row align-items-center" src="~/icons/icons8_coin_wallet_64px.png" style="width: 30px;" />
-							Wallet
-						</a>
-					</li>
-					<li>
-						<a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-link text-white">
-							<img class="flex-row align-items-center" src="~/icons/icons8_shield_64px.png" style="width: 30px;" />
-							Privacy
-						</a>
-					</li>
-				</ul>
-				<hr>
-
-				<div class="dropdown">
-					<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-						<img src="~/profile/userProfile.png" alt="" width="32" height="32" class="rounded-circle me-2">
-						<strong>@User.Identity.Name</strong>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-						<li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Setting">Settings</a></li>
-						<li><hr class="dropdown-divider"></li>
+				@if (User.IsInRole("User"))
+				{
+					<hr>
+					<ul class="nav nav-pills flex-column mb-auto">
 						<li>
-							<form class="" asp-area="" asp-controller="Account" asp-action="Logout">
-								<button class="btn " style="color:whitesmoke"> Logout</button>
-							</form>
-
+							<a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-white">
+								<img src="~/icons/icons8_Circle_Chart_128px.png" style="width: 30px;" />
+								Portfolio
+							</a>
+						</li>
+						<li>
+							<a asp-area="" asp-controller="Trade" asp-action="Index" class="nav-link text-white">
+								<img class="flex-row align-items-center" src="~/icons/icons8_bullish_trade_128px.png" style="width: 30px;" />
+								Trade
+							</a>
+						</li>
+						<li>
+							<a class="nav-link text-white">
+								<img class="flex-row align-items-center" src="~/icons/icons8_coin_wallet_64px.png" style="width: 30px;" />
+								Wallet
+							</a>
+						</li>
+						<li>
+							<a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-link text-white">
+								<img class="flex-row align-items-center" src="~/icons/icons8_shield_64px.png" style="width: 30px;" />
+								Privacy
+							</a>
 						</li>
 					</ul>
-				</div>
+					<hr>
+
+					<div class="dropdown">
+						<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="~/profile/userProfile.png" alt="" width="32" height="32" class="rounded-circle me-2">
+							<strong>@User.Identity.Name</strong>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+							<li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Setting">Settings</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li>
+								<form class="" asp-area="" asp-controller="Account" asp-action="Logout">
+									<button class="btn " style="color:whitesmoke"> Logout</button>
+								</form>
+
+							</li>
+						</ul>
+					</div>
+				}
+				else
+				{
+
+					<ul class="nav nav-pills flex-column mb-auto">
+						<li>
+							<a asp-area="" asp-controller="Admin" asp-action="Warehouse" class="nav-link text-white">
+								<img src="~/icons/icons8_Circle_Chart_128px.png" style="width: 30px;" />
+								Warehouse
+							</a>
+						</li>
+						<li>
+							<a asp-area="" asp-controller="Admin" asp-action="Commodity" class="nav-link text-white">
+								<img class="flex-row align-items-center" src="~/icons/icons8_bullish_trade_128px.png" style="width: 30px;" />
+								Commodity
+							</a>
+						</li>
+						</ul>
+
+					<div class="dropdown">
+						<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="~/profile/userProfile.png" alt="" width="32" height="32" class="rounded-circle me-2">
+							<strong>@User.Identity.Name</strong>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+							<li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Setting">Settings</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li>
+								<form class="" asp-area="" asp-controller="Account" asp-action="Logout">
+									<button class="btn " style="color:whitesmoke"> Logout</button>
+								</form>
+
+							</li>
+						</ul>
+					</div>
+				}
+
+
 			}
 			else
 			{

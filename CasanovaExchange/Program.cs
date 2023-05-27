@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICommodityRepository, CommodityExchangeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+
+
 builder.Services.AddDbContextPool<CommodityExchangeContext>(
     options => options.UseSqlServer(
            builder.Configuration.GetConnectionString("" +
