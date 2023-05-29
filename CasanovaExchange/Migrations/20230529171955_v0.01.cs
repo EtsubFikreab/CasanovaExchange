@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CasanovaExchange.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class v001 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,17 +51,30 @@ namespace CasanovaExchange.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Wallet",
+                columns: table => new
+                {
+                    WalletId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Balance = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wallet", x => x.WalletId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Warehouse",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    WarehouseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WarehouseCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Warehouse", x => x.Id);
+                    table.PrimaryKey("PK_Warehouse", x => x.WarehouseId);
                 });
 
             migrationBuilder.CreateTable(
@@ -171,7 +184,27 @@ namespace CasanovaExchange.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "commodity",
+                name: "Portfolio",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WalletId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Portfolio", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Portfolio_Wallet_WalletId",
+                        column: x => x.WalletId,
+                        principalTable: "Wallet",
+                        principalColumn: "WalletId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Commodity",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -179,26 +212,55 @@ namespace CasanovaExchange.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Symbol = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CommodityWarehouseId = table.Column<int>(type: "int", nullable: false),
-                    ProductionYear = table.Column<int>(type: "int", nullable: false)
+                    CommodityWarehouseWarehouseId = table.Column<int>(type: "int", nullable: false),
+                    ProductionYear = table.Column<int>(type: "int", nullable: false),
+                    CommodityImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_commodity", x => x.Id);
+                    table.PrimaryKey("PK_Commodity", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_commodity_Warehouse_CommodityWarehouseId",
-                        column: x => x.CommodityWarehouseId,
+                        name: "FK_Commodity_Warehouse_CommodityWarehouseWarehouseId",
+                        column: x => x.CommodityWarehouseWarehouseId,
                         principalTable: "Warehouse",
-                        principalColumn: "Id",
+                        principalColumn: "WarehouseId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "trade",
+                name: "CommodityListing",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CommodityId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<double>(type: "float", nullable: false),
+                    DateListed = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PortfolioId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CommodityListing", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CommodityListing_Commodity_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CommodityListing_Portfolio_PortfolioId",
+                        column: x => x.PortfolioId,
+                        principalTable: "Portfolio",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CurrentTrade",
                 columns: table => new
                 {
                     TradeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CommodityTradedId = table.Column<int>(type: "int", nullable: false),
                     PreviousClose = table.Column<double>(type: "float", nullable: false),
                     Close = table.Column<double>(type: "float", nullable: false),
@@ -209,11 +271,11 @@ namespace CasanovaExchange.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_trade", x => x.TradeId);
+                    table.PrimaryKey("PK_CurrentTrade", x => x.TradeId);
                     table.ForeignKey(
-                        name: "FK_trade_commodity_CommodityTradedId",
+                        name: "FK_CurrentTrade_Commodity_CommodityTradedId",
                         column: x => x.CommodityTradedId,
-                        principalTable: "commodity",
+                        principalTable: "Commodity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -258,14 +320,29 @@ namespace CasanovaExchange.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_commodity_CommodityWarehouseId",
-                table: "commodity",
-                column: "CommodityWarehouseId");
+                name: "IX_Commodity_CommodityWarehouseWarehouseId",
+                table: "Commodity",
+                column: "CommodityWarehouseWarehouseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_trade_CommodityTradedId",
-                table: "trade",
+                name: "IX_CommodityListing_CommodityId",
+                table: "CommodityListing",
+                column: "CommodityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CommodityListing_PortfolioId",
+                table: "CommodityListing",
+                column: "PortfolioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CurrentTrade_CommodityTradedId",
+                table: "CurrentTrade",
                 column: "CommodityTradedId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Portfolio_WalletId",
+                table: "Portfolio",
+                column: "WalletId");
         }
 
         /// <inheritdoc />
@@ -287,7 +364,10 @@ namespace CasanovaExchange.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "trade");
+                name: "CommodityListing");
+
+            migrationBuilder.DropTable(
+                name: "CurrentTrade");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -296,7 +376,13 @@ namespace CasanovaExchange.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "commodity");
+                name: "Portfolio");
+
+            migrationBuilder.DropTable(
+                name: "Commodity");
+
+            migrationBuilder.DropTable(
+                name: "Wallet");
 
             migrationBuilder.DropTable(
                 name: "Warehouse");

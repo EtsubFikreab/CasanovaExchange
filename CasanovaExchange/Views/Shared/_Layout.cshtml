@@ -23,7 +23,7 @@
 			<!--this is the place authenticated users only display the sidebar-->
 			@if (User.Identity.IsAuthenticated)
 			{
-				@if (User.IsInRole("User"))
+				@if (!User.IsInRole("Admin"))
 				{
 					<hr>
 					<ul class="nav nav-pills flex-column mb-auto">
@@ -34,7 +34,7 @@
 							</a>
 						</li>
 						<li>
-							<a asp-area="" asp-controller="Trade" asp-action="Index" class="nav-link text-white">
+							<a asp-area="" asp-controller="Trade" asp-action="ListCommodities" class="nav-link text-white">
 								<img class="flex-row align-items-center" src="~/icons/icons8_bullish_trade_128px.png" style="width: 30px;" />
 								Trade
 							</a>

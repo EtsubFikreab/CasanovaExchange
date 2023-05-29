@@ -1,0 +1,40 @@
+﻿@using CasanovaExchange.Models;
+@model List<Commodity>
+@{
+	ViewBag.Title = "Get Commodity";
+	string c = ViewBag.Commodity;
+}
+<h1>@c</h1>
+
+
+<table class="table table-hover table-dark w-75">
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Symbol</th>
+			<th scope="col">Production Year</th>
+			<th scope="col">Warehouse Code</th>
+			<th scope="col">Select</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		@foreach (var commodityItem in @Model)
+		{
+			<tr>
+				<th>@commodityItem.Name</th>
+				<th>@commodityItem.Symbol</th>
+				<th>@commodityItem.ProductionYear</th>
+				<th>@commodityItem.CommodityWarehouse.WarehouseCode</th>
+				<th><a class="commodity-list" asp-controller="Trade" asp-action="GetCommodity" asp-route-Commodity="@commodityItem"><img src="~/icons/icons8_back_96px.png"></a>
+				</th>
+			</tr>
+		}
+
+	</tbody>
+</table>
+<style>
+	img{
+		max-width:3ch;
+	}
+</style>

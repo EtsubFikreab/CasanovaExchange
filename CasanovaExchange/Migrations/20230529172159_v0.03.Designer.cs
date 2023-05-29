@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasanovaExchange.Migrations
 {
     [DbContext(typeof(CommodityExchangeContext))]
-    [Migration("20230524104819_v0.02")]
-    partial class v002
+    [Migration("20230529172159_v0.03")]
+    partial class v003
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,21 +121,20 @@ namespace CasanovaExchange.Migrations
 
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
-                    b.Property<int>("PortfolioId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PortfolioId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("WalletId")
                         .HasColumnType("int");
 
-                    b.HasKey("PortfolioId");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("Id");
 
                     b.HasIndex("WalletId");
 
@@ -451,7 +450,7 @@ namespace CasanovaExchange.Migrations
                         .IsRequired();
 
                     b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
-                        .WithMany("CommodityTransaction")
+                        .WithMany()
                         .HasForeignKey("PortfolioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -463,17 +462,11 @@ namespace CasanovaExchange.Migrations
 
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
                     b.HasOne("CasanovaExchange.Models.Wallet", "Wallet")
                         .WithMany()
                         .HasForeignKey("WalletId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
 
                     b.Navigation("Wallet");
                 });
@@ -543,8 +536,6 @@ namespace CasanovaExchange.Migrations
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
                     b.Navigation("CommodityListings");
-
-                    b.Navigation("CommodityTransaction");
                 });
 #pragma warning restore 612, 618
         }
