@@ -3,6 +3,7 @@ using CasanovaExchange.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CasanovaExchange.Controllers
 {
@@ -113,6 +114,14 @@ namespace CasanovaExchange.Controllers
 		{
 			ViewBag.commodityLs = _commodityRepository.GetCommodityList();
 			return View();
+		}
+		public ViewResult GetCommodity(string commodityString)
+		{
+			if (commodityString.IsNullOrEmpty())
+                commodityString = "empty";
+			ViewBag.Commodity = commodityString;
+			List<Commodity> CommodityList = _commodityRepository.GetCommodityByName(commodityString);
+            return View(CommodityList);
 		}
 	}
 }

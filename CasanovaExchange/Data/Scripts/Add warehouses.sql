@@ -5,9 +5,14 @@ values
    ('Addis Ababa', 'AA'),
    ('Adama', 'AD'),
    ('Assossa', 'AS'),
+   ('Badelle', 'BL'),
+   ('Bonga', 'BO'),
    ('Bure', 'BR'),
    ('Bure', 'BU'),
    ('Dansha', 'DS'),
+   ('Dilla', 'DL'),
+   ('Dire Dawa', 'DD'),
+   ('Gimbi', 'GM'),
    ('Gonder', 'GN'),
    ('Hawassa', 'HW'),
    ('Humera', 'HM'),
@@ -16,9 +21,9 @@ values
    ('Metemma', 'MT'),
    ('Nazareth', 'NZ'),
    ('Nekemte', 'NK'),
+   ('Pawe', 'PW'),
    ('Sarris Coffee', 'SC'),
    ('Saris Grain', 'SG'),
-   ('Hawassa', 'HW'),
    ('Wolayta Sodo Grain', 'WG');
 
 select *

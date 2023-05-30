@@ -6,10 +6,9 @@
 	var commodityList = ViewBag.commodityLs;
 }
 <h4 class="display-4 mb-4">All Commodities</h4>
-
 @foreach (var c in commodityList)
 {
-	<a class="commodity-list p-2 card w-25 text-white mb-2" asp-controller="Trade" asp-action="Index">
+	<a class="commodity-list p-2 card w-25 text-white mb-2" asp-controller="Trade" asp-action="GetCommodity" asp-route-commodityString="@c">
 		@c
 	</a>
 }

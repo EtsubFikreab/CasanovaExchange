@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasanovaExchange.Migrations
 {
     [DbContext(typeof(CommodityExchangeContext))]
-    [Migration("20230527131331_ba_vo.05")]
-    partial class ba_vo05
+    [Migration("20230529172042_v0.02")]
+    partial class v002
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,7 +90,7 @@ namespace CasanovaExchange.Migrations
                     b.ToTable("CommodityListing");
                 });
 
-            modelBuilder.Entity("CasanovaExchange.Models.CommodityTransaction", b =>
+            modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,44 +98,14 @@ namespace CasanovaExchange.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CommodityId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PortfolioId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Quantity")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CommodityId");
-
-                    b.HasIndex("PortfolioId");
-
-                    b.ToTable("CommodityTransactions");
-                });
-
-            modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
-                {
-                    b.Property<int>("PortfolioId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PortfolioId"));
-
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("WalletId")
                         .HasColumnType("int");
 
-                    b.HasKey("PortfolioId");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("Id");
 
                     b.HasIndex("WalletId");
 
@@ -442,38 +412,13 @@ namespace CasanovaExchange.Migrations
                     b.Navigation("Commodity");
                 });
 
-            modelBuilder.Entity("CasanovaExchange.Models.CommodityTransaction", b =>
-                {
-                    b.HasOne("CasanovaExchange.Models.Commodity", "Commodity")
-                        .WithMany()
-                        .HasForeignKey("CommodityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
-                        .WithMany("CommodityTransaction")
-                        .HasForeignKey("PortfolioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Commodity");
-
-                    b.Navigation("Portfolio");
-                });
-
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
                     b.HasOne("CasanovaExchange.Models.Wallet", "Wallet")
                         .WithMany()
                         .HasForeignKey("WalletId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
 
                     b.Navigation("Wallet");
                 });
@@ -543,8 +488,6 @@ namespace CasanovaExchange.Migrations
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
                     b.Navigation("CommodityListings");
-
-                    b.Navigation("CommodityTransaction");
                 });
 #pragma warning restore 612, 618
         }
