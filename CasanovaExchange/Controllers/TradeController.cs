@@ -113,6 +113,7 @@ namespace CasanovaExchange.Controllers
 		public ActionResult ListCommodities()
 		{
 			ViewBag.commodityLs = _commodityRepository.GetCommodityList();
+			_commodityRepository.CheckPortfolio(_userManager.GetUserId(User));
 			return View();
 		}
 		public ViewResult GetCommodity(string commodityString)

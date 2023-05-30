@@ -56,7 +56,7 @@ namespace CasanovaExchange.Repository
 		}
 		public void CheckPortfolio(string CurrentUserId)
 		{
-			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).FirstOrDefault();
+			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p=>p.Wallet).FirstOrDefault();
 			if (CurrentUserPortfolio != null)
 				return;
 
@@ -67,7 +67,22 @@ namespace CasanovaExchange.Repository
 			};
 			_context.Portfolio.Add(portfolio);
 			_context.SaveChanges();
-			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).FirstOrDefault();
+			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault();
+		}
+		public Wallet GetWallet(string CurrentUserId)
+		{
+			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault();
+			return CurrentUserPortfolio.Wallet;
+		}
+		public Portfolio GetPortfolio()
+		{
+			return CurrentUserPortfolio;
+		}
+		public void AddBalance(string CurrentUserId, double Balance)
+		{
+			_context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault().Wallet.Balance+=Balance;
+			_context.SaveChanges();
+
 		}
 	}
 }

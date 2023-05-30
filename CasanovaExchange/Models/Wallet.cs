@@ -6,7 +6,7 @@
         {
             Balance = 1000;
         }
-        public int WalletId{ get; set; }
+        public int Id{ get; set; }
         public double Balance { get; set; }
     }
 }
