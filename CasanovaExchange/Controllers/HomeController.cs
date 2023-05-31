@@ -2,7 +2,9 @@
 using CasanovaExchange.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Localization;
 using System.Diagnostics;
 
 namespace CasanovaExchange.Controllers
@@ -14,7 +16,7 @@ namespace CasanovaExchange.Controllers
 		private readonly ILogger<HomeController> _logger;
 		private readonly UserManager<IdentityUser> _userManager;
 		private readonly ICommodityRepository _commodityRepository;
-		public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, ICommodityRepository commodityRepository)
+		public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, ICommodityRepository commodityRepository, IHtmlLocalizer<HomeController> localizer)
 		{
 			_userManager = userManager;
 			_commodityRepository = commodityRepository;
@@ -25,7 +27,7 @@ namespace CasanovaExchange.Controllers
 		public IActionResult Index()
 		{
 			var test = _localizer["HelloWorld"];
-			ViewDate["HelloWorld"] = test;
+			ViewData["HelloWorld"] = test;
 			_commodityRepository.CheckPortfolio(_userManager.GetUserId(User));
 			return View();
 		}
@@ -38,7 +40,7 @@ namespace CasanovaExchange.Controllers
 		public IActionResult CultureManagement (string culture, string returnUrl)
         {
 			Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-				new CookieOptions { Expires = DateTimeOffset.Now.AddaDays(30) });
+				new CookieOptions { Expires = DateTimeOffset.Now.AddDays(30) });
 			return LocalRedirect(returnUrl);
 				}
 

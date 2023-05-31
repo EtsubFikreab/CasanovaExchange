@@ -1,13 +1,17 @@
 using CasanovaExchange.Repository;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.service.AddLocalization(opt => { opt.ResourcePath = "Resources"; });
-builder.service.AddMvc().AddLocalization(LanguageViewLocationExpabderFormat.Suffix).AddDtaAnotationsLocalization();
-builder.services.Configure<RequestLocalizationOptions>(
+builder.Services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
+builder.Services.AddMvc().AddLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDtaAnotationsLocalization();
+builder.Services.Configure<RequestLocalizationOptions>(
     opt =>
     {
         var supporetdCultures = new List<CultureInfo>
