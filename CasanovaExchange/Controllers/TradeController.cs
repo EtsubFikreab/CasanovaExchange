@@ -124,5 +124,12 @@ namespace CasanovaExchange.Controllers
 			List<Commodity> CommodityList = _commodityRepository.GetCommodityByName(commodityString);
             return View(CommodityList);
 		}
+		public ViewResult GetCommodityListings(int commodityId)
+		{
+			Commodity commodity = _commodityRepository.GetCommodityById(commodityId);
+			ViewBag.commodity = commodity;
+			List<CommodityListing> commodityListings = _commodityRepository.GetCommodityListings(commodity);
+			return View(commodityListings);
+		}
 	}
 }

@@ -1,0 +1,142 @@
+﻿@using CasanovaExchange.Models;
+@model List<CommodityListing>
+@{
+}
+<h3>@ViewBag.commodity.Name</h3>
+<h5>@ViewBag.commodity.Symbol</h5>
+
+<div class="container d-flex justify-content-between">
+	<div class="About-commodity">
+		<div class="About-commodity-top">
+			<h4>About</h4>
+			<p>
+				@ViewBag.commodity.Description
+			</p>
+		</div>
+		<div class="d-flex justify-content-sm-around text-center">
+			<div class="about-item">
+				<div class="fw-bold">WareHouse</div>
+				@ViewBag.commodity.CommodityWarehouse.Name
+				@ViewBag.commodity.CommodityWarehouse.WarehouseCode
+			</div>
+			<div class="about-item">
+				<div class="fw-bold">Production Year</div>
+				@ViewBag.commodity.ProductionYear
+			</div>
+			<div class="about-item">
+				<div class="fw-bold">Description</div>
+				@ViewBag.commodity.Description
+			</div>
+		</div>
+	</div>
+	<div class="order-commodity">
+		<div class="sell-buy-buttons d-flex justify-content-around w-75 bg-dark ">
+			<button id="sell-commodity-button">Sell</button>
+			<button id="buy-commodity-button">Buy</button>
+		</div>
+		<div id="buy-commodity">
+			Buy commodity
+			<form>
+				<div>
+				</div>
+			</form>
+		</div>
+		<div id="sell-commodity">
+			Sell Commodity
+		</div>
+	</div>
+</div>
+
+<style>
+	.container {
+		height: 50ch;
+		align-items: flex-end;
+	}
+
+	.About-commodity {
+		background-color: #2E4057;
+		border-radius: 10px;
+		padding: 1ch;
+		padding-top: 2ch;
+		padding-bottom: 1ch;
+		box-shadow: black 0px 4px 12px;
+		height: 20ch;
+		width: 45vw;
+	}
+
+	.About-commodity-top {
+		padding-inline: 4ch;
+	}
+
+		.About-commodity-top p {
+			margin-bottom: 3ch;
+		}
+
+	.order-commodity {
+		background-color: #2E4057;
+		border-radius: 10px;
+		box-shadow: black 0px 4px 12px;
+		height: 50ch;
+		width: 20vw;
+		padding: 2ch;
+	}
+
+	.sell-buy-buttons {
+		margin-inline: auto;
+		margin-bottom: 2ch;
+		padding: 4px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		border-radius: 15px;
+	}
+
+		.sell-buy-buttons button {
+			color: aliceblue;
+			width: 10ch;
+			border-radius: 10px;
+			padding: 1ch;
+			font-weight: 600;
+			background-color: #2E4057;
+			border:0 solid black;
+		}
+
+			.sell-buy-buttons button:checked {
+				background-color: aqua;
+			}
+
+	#buy-commodity {
+		display: none;
+	}
+
+	.active {
+		background-color: #00ff00;
+	}
+
+	.fade {
+		opacity: 0.5 !important;
+		transition: opacity 0.5s;
+	}
+
+</style>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+	$("#sell-commodity-button").click(function () {
+		$("#buy-commodity").hide();
+		$("#sell-commodity").show();
+
+		$("#sell-commodity-button").addClass("active");
+		$("#sell-commodity-button").removeClass("fade");
+		$("#buy-commodity-button").removeClass("active");
+		$("#buy-commodity-button").addClass("fade");
+	});
+	$("#buy-commodity-button").click(function () {
+		$("#sell-commodity").hide();
+		$("#buy-commodity").show();
+
+		$("#buy-commodity-button").addClass("active");
+		$("#buy-commodity-button").removeClass("fade");
+		$("#sell-commodity-button").removeClass("active");
+		$("#sell-commodity-button").addClass("fade");
+	});
+</script>

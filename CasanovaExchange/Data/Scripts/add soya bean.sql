@@ -9,5 +9,4 @@ values
     ('Soya bean', 'SBAS','Soya Bean Assosa',1,2015),
     ('Soya bean', 'SBSH','Soya Bean Shewa',1,2015),
     ('Soya bean', 'SWO','Soya Beans Wollega',20,2015);
-SELECT * from Commodi1
-SELECT * FROM AspNetUsers
+SELECT * from Commodity

@@ -17,4 +17,3 @@ values
     
 
 SELECT * from Commodity
-SELECT * FROM AspNetUsers

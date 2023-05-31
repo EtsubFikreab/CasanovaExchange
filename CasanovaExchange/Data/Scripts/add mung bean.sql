@@ -6,4 +6,3 @@ values
     ('Mung bean', 'GMBS','Green grams',16,2015),
     ('Mung bean', 'GMBS','Green grams',16,2015);
 SELECT * from Commodity
-SELECT * FROM AspNetUsers
