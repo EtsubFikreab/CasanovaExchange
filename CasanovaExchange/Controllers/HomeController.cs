@@ -10,6 +10,7 @@ namespace CasanovaExchange.Controllers
 
 	public class HomeController : Controller
 	{
+		private readonly IHtmlLocalizer<HomeController> _localizer;
 		private readonly ILogger<HomeController> _logger;
 		private readonly UserManager<IdentityUser> _userManager;
 		private readonly ICommodityRepository _commodityRepository;
@@ -18,10 +19,13 @@ namespace CasanovaExchange.Controllers
 			_userManager = userManager;
 			_commodityRepository = commodityRepository;
 			_logger = logger;
+			_localizer = localizer;
 		}
 		[Authorize]
 		public IActionResult Index()
 		{
+			var test = _localizer["HelloWorld"];
+			ViewDate["HelloWorld"] = test;
 			_commodityRepository.CheckPortfolio(_userManager.GetUserId(User));
 			return View();
 		}
@@ -30,7 +34,13 @@ namespace CasanovaExchange.Controllers
 		{
 			return View();
 		}
-
+		[HttpPost]
+		public IActionResult CultureManagement (string culture, string returnUrl)
+        {
+			Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+				new CookieOptions { Expires = DateTimeOffset.Now.AddaDays(30) });
+			return LocalRedirect(returnUrl);
+				}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()

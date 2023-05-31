@@ -5,8 +5,21 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-biulder.service.AddLocalization(opt => {opt.ResourcePath = "Resources";})
-biulder.service.AddMvc().AddLocalization(LanguageViewLocationExpabderFormat.Suffix).AddDtaAnotationsLocalization();
+builder.service.AddLocalization(opt => { opt.ResourcePath = "Resources"; });
+builder.service.AddMvc().AddLocalization(LanguageViewLocationExpabderFormat.Suffix).AddDtaAnotationsLocalization();
+builder.services.Configure<RequestLocalizationOptions>(
+    opt =>
+    {
+        var supporetdCultures = new List<CultureInfo>
+        {
+            new CultureInfo("en"),
+            new CultureInfo("am")
+        };
+        opt.DefaultRequestCulture = new RequestCulture("en");
+        opt.SupportedCultures = supporetdCultures;
+        opt.SupportedUICultures = supporetdCultures;
+    }
+    );
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICommodityRepository, CommodityExchangeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -42,10 +55,11 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-var supportedCultures = new[] {"en","am"};
-var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultuers[0])
-.AddSupportedCultures(supportedCultures)
-.AddSupportedUICultures(supportedCultures);
+app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
+//var supportedCultures = new[] {"en","am"};
+//var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultuers[0])
+//.AddSupportedCultures(supportedCultures)
+//.AddSupportedUICultures(supportedCultures);
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
