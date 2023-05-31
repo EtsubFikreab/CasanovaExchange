@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+biulder.service.AddLocalization(opt => {opt.ResourcePath = "Resources";})
+biulder.service.AddMvc().AddLocalization(LanguageViewLocationExpabderFormat.Suffix).AddDtaAnotationsLocalization();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICommodityRepository, CommodityExchangeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -40,7 +42,10 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
+var supportedCultures = new[] {"en","am"};
+var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultuers[0])
+.AddSupportedCultures(supportedCultures)
+.AddSupportedUICultures(supportedCultures);
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
