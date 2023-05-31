@@ -6,6 +6,6 @@ namespace CasanovaExchange.ViewModel
 		public List<CommodityListing>? CommodityListings { get; set; }
 		public CommodityListing? CommodityListing { get; set; }
 		public double? Quantity { get; set; }
-		public Commodity? commodity { get; set; }
+		public Commodity? commodity { get; set; } 
 	}
 }
