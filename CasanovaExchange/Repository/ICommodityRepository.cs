@@ -15,7 +15,7 @@ namespace CasanovaExchange.Repository
         public Portfolio GetPortfolio(string CurrentUserId);
         public Commodity GetCommodityById(int id);
         public List<CommodityListing> GetCommodityListings(Commodity commodity);
-        public void SellCommodity(CommodityListingViewModel commodityListingViewModel);
+        public void SellCommodity(CommodityListingViewModel commodityListingViewModel, string currentUserId);
         public bool AddWarehouse(Warehouse warehouse);
         public bool AddCommodity(Commodity commodity);
         public Warehouse GetWarehouseByCode(string WarehouseCode);
