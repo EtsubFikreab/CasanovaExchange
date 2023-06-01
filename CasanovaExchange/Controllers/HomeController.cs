@@ -1,5 +1,6 @@
 ﻿using CasanovaExchange.Models;
 using CasanovaExchange.Repository;
+using CasanovaExchange.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,8 @@ namespace CasanovaExchange.Controllers
 		public IActionResult Index()
 		{
 			_commodityRepository.CheckPortfolio(_userManager.GetUserId(User));
-			return View();
+			HomeViewModel homeViewModel = _commodityRepository.HomeViewModel(_userManager.GetUserId(User));
+			return View(homeViewModel);
 		}
 		[Authorize]
 		public IActionResult Privacy()
