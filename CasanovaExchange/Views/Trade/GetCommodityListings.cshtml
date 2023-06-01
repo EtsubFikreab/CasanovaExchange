@@ -1,31 +1,35 @@
-﻿@using CasanovaExchange.Models;
-@model List<CommodityListing>
+﻿@using CasanovaExchange.ViewModel
+@using CasanovaExchange.Models;
+@model CommodityListingViewModel
 @{
+	Commodity commodity = Model.commodity;
+	ViewBag.Title = "Commodity Listings";
+	int counter = 1;
 }
-<h3>@ViewBag.commodity.Name</h3>
-<h5>@ViewBag.commodity.Symbol</h5>
+<h3>@commodity.Name</h3>
+<h5>@commodity.Symbol</h5>
 
 <div class="container d-flex justify-content-between">
 	<div class="About-commodity">
 		<div class="About-commodity-top">
 			<h4>About</h4>
 			<p>
-				@ViewBag.commodity.Description
+				@commodity.Description
 			</p>
 		</div>
 		<div class="d-flex justify-content-sm-around text-center">
 			<div class="about-item">
 				<div class="fw-bold">WareHouse</div>
-				@ViewBag.commodity.CommodityWarehouse.Name
-				@ViewBag.commodity.CommodityWarehouse.WarehouseCode
+				@commodity.CommodityWarehouse.Name
+				@commodity.CommodityWarehouse.WarehouseCode
 			</div>
 			<div class="about-item">
 				<div class="fw-bold">Production Year</div>
-				@ViewBag.commodity.ProductionYear
+				@commodity.ProductionYear
 			</div>
 			<div class="about-item">
 				<div class="fw-bold">Description</div>
-				@ViewBag.commodity.Description
+				@commodity.Description
 			</div>
 		</div>
 	</div>
@@ -35,22 +39,97 @@
 			<button id="buy-commodity-button">Buy</button>
 		</div>
 		<div id="buy-commodity">
-			Buy commodity
-			<form>
-				<div>
+			<form class="commodity-form d-flex flex-column justify-content-around" asp-controller="Trade" asp-action="BuyCommodity" enctype="multipart/form-data" method="post">
+				<input hidden asp-for="commodity.Id"/>
+				<div class="d-flex flex-column">
+					<label asp-for="Quantity" class=""></label>
+					<input asp-for="Quantity" type="number" placeholder="0" class="" />
 				</div>
+				<input type="submit" value="Buy Commodity" class="btn btn-primary bm-2" />
 			</form>
 		</div>
 		<div id="sell-commodity">
-			Sell Commodity
+			<form class="commodity-form sell-commodity-form d-flex flex-column justify-content-around" asp-controller="Trade" asp-action="SellCommodity" enctype="multipart/form-data" method="post">
+				<input hidden asp-for="CommodityListing" />
+				<input hidden asp-for="CommodityListing.Commodity" />
+				<div class="d-flex flex-column">
+					<label asp-for="CommodityListing.Quantity" class=""></label>
+					<input asp-for="CommodityListing.Quantity" type="number" placeholder="0" class="" />
+				</div>
+				<div class="d-flex flex-column">
+					<label asp-for="CommodityListing.Price" class=""></label>
+					<input asp-for="CommodityListing.Price" type="number" placeholder="0" class="" />
+				</div>
+				<input type="submit" value="Sell Commodity" class="btn btn-primary bm-2" />
+			</form>
 		</div>
 	</div>
 </div>
+
+
+<h3>Commodity Listings</h3>
+<input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" name="search">
+
+<table class="table table-hover table-dark w-75">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Symbol</th>
+			<th scope="col">Quantity</th>
+			<th scope="col">Price</th>
+			<th scope="col">Date Listed</th>
+		</tr>
+	</thead>
+	<tbody id="Commodity-table">
+		@foreach (var commodityItem in Model.CommodityListings)
+		{
+			<tr>
+				<th>@counter++</th>
+				<th>@commodityItem.Commodity.Symbol</th>
+				<th>@commodityItem.Quantity</th>
+				<th>@commodityItem.Price</th>
+				<th>@commodityItem.DateListed</th>
+				<th>
+					<a class="commodity-list" asp-controller="Trade" asp-action="GetCommodityListings" asp-route-commodityId="@commodityItem.Id"><img src="~/icons/icons8_back_96px.png"></a>
+				</th>
+			</tr>
+		}
+
+	</tbody>
+</table>
+<style>
+	img {
+		max-width: 3ch;
+	}
+
+	#search-input {
+		margin-top: 2ch;
+		margin-bottom: 1ch;
+		border-radius: 5px;
+		padding-left: 2ch;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		width: 20vw;
+	}
+</style>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$("#search-input").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#Commodity-table tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
+
 
 <style>
 	.container {
 		height: 50ch;
 		align-items: flex-end;
+		margin-bottom: 4ch;
 	}
 
 	.About-commodity {
@@ -97,12 +176,29 @@
 			padding: 1ch;
 			font-weight: 600;
 			background-color: #2E4057;
-			border:0 solid black;
+			border: 0 solid black;
 		}
 
 			.sell-buy-buttons button:checked {
 				background-color: aqua;
 			}
+
+	.commodity-form {
+		height: 25ch;
+		align-items: center;
+	}
+
+		.commodity-form div {
+			align-items: center;
+		}
+
+			.commodity-form div label {
+				margin-bottom: 1ch;
+			}
+
+	.sell-commodity-form {
+		height: 30 ch;
+	}
 
 	#buy-commodity {
 		display: none;
@@ -119,8 +215,10 @@
 
 </style>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
+	$("#sell-commodity-button").addClass("active");
+	$("#buy-commodity-button").addClass("fade");
+
 	$("#sell-commodity-button").click(function () {
 		$("#buy-commodity").hide();
 		$("#sell-commodity").show();
