@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasanovaExchange.Migrations
 {
     [DbContext(typeof(CommodityExchangeContext))]
-    [Migration("20230529171955_v0.01")]
-    partial class v001
+    [Migration("20230601152555_ba_v01")]
+    partial class ba_v01
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,14 +69,21 @@ namespace CasanovaExchange.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
                     b.Property<int>("CommodityId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateListed")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("PortfolioId")
                         .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<double>("Quantity")
                         .HasColumnType("float");
@@ -88,6 +95,35 @@ namespace CasanovaExchange.Migrations
                     b.HasIndex("PortfolioId");
 
                     b.ToTable("CommodityListing");
+                });
+
+            modelBuilder.Entity("CasanovaExchange.Models.CommodityTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CommodityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PortfolioId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Quantity")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommodityId");
+
+                    b.HasIndex("PortfolioId");
+
+                    b.ToTable("CommodityTransactions");
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
@@ -151,18 +187,44 @@ namespace CasanovaExchange.Migrations
                     b.ToTable("CurrentTrade");
                 });
 
-            modelBuilder.Entity("CasanovaExchange.Models.Wallet", b =>
+            modelBuilder.Entity("CasanovaExchange.Models.UserCommodity", b =>
                 {
-                    b.Property<int>("WalletId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WalletId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CommodityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PortfolioId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Quantity")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommodityId");
+
+                    b.HasIndex("PortfolioId");
+
+                    b.ToTable("UserCommodity");
+                });
+
+            modelBuilder.Entity("CasanovaExchange.Models.Wallet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<double>("Balance")
                         .HasColumnType("float");
 
-                    b.HasKey("WalletId");
+                    b.HasKey("Id");
 
                     b.ToTable("Wallet");
                 });
@@ -412,6 +474,25 @@ namespace CasanovaExchange.Migrations
                     b.Navigation("Commodity");
                 });
 
+            modelBuilder.Entity("CasanovaExchange.Models.CommodityTransaction", b =>
+                {
+                    b.HasOne("CasanovaExchange.Models.Commodity", "Commodity")
+                        .WithMany()
+                        .HasForeignKey("CommodityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
+                        .WithMany()
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Commodity");
+
+                    b.Navigation("Portfolio");
+                });
+
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
                     b.HasOne("CasanovaExchange.Models.Wallet", "Wallet")
@@ -432,6 +513,25 @@ namespace CasanovaExchange.Migrations
                         .IsRequired();
 
                     b.Navigation("CommodityTraded");
+                });
+
+            modelBuilder.Entity("CasanovaExchange.Models.UserCommodity", b =>
+                {
+                    b.HasOne("CasanovaExchange.Models.Commodity", "Commodity")
+                        .WithMany()
+                        .HasForeignKey("CommodityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
+                        .WithMany("UserCommodities")
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Commodity");
+
+                    b.Navigation("Portfolio");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -488,6 +588,8 @@ namespace CasanovaExchange.Migrations
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
                     b.Navigation("CommodityListings");
+
+                    b.Navigation("UserCommodities");
                 });
 #pragma warning restore 612, 618
         }

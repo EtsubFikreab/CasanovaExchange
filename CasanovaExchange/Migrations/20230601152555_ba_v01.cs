@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CasanovaExchange.Migrations
 {
     /// <inheritdoc />
-    public partial class v001 : Migration
+    public partial class ba_v01 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,13 +54,13 @@ namespace CasanovaExchange.Migrations
                 name: "Wallet",
                 columns: table => new
                 {
-                    WalletId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Balance = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Wallet", x => x.WalletId);
+                    table.PrimaryKey("PK_Wallet", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -199,7 +199,7 @@ namespace CasanovaExchange.Migrations
                         name: "FK_Portfolio_Wallet_WalletId",
                         column: x => x.WalletId,
                         principalTable: "Wallet",
-                        principalColumn: "WalletId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -235,7 +235,9 @@ namespace CasanovaExchange.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CommodityId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<double>(type: "float", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     DateListed = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
                     PortfolioId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -252,6 +254,34 @@ namespace CasanovaExchange.Migrations
                         column: x => x.PortfolioId,
                         principalTable: "Portfolio",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CommodityTransactions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CommodityId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Quantity = table.Column<double>(type: "float", nullable: false),
+                    PortfolioId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CommodityTransactions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CommodityTransactions_Commodity_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CommodityTransactions_Portfolio_PortfolioId",
+                        column: x => x.PortfolioId,
+                        principalTable: "Portfolio",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -276,6 +306,33 @@ namespace CasanovaExchange.Migrations
                         name: "FK_CurrentTrade_Commodity_CommodityTradedId",
                         column: x => x.CommodityTradedId,
                         principalTable: "Commodity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserCommodity",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PortfolioId = table.Column<int>(type: "int", nullable: false),
+                    CommodityId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserCommodity", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserCommodity_Commodity_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserCommodity_Portfolio_PortfolioId",
+                        column: x => x.PortfolioId,
+                        principalTable: "Portfolio",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -335,6 +392,16 @@ namespace CasanovaExchange.Migrations
                 column: "PortfolioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CommodityTransactions_CommodityId",
+                table: "CommodityTransactions",
+                column: "CommodityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CommodityTransactions_PortfolioId",
+                table: "CommodityTransactions",
+                column: "PortfolioId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CurrentTrade_CommodityTradedId",
                 table: "CurrentTrade",
                 column: "CommodityTradedId");
@@ -343,6 +410,16 @@ namespace CasanovaExchange.Migrations
                 name: "IX_Portfolio_WalletId",
                 table: "Portfolio",
                 column: "WalletId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserCommodity_CommodityId",
+                table: "UserCommodity",
+                column: "CommodityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserCommodity_PortfolioId",
+                table: "UserCommodity",
+                column: "PortfolioId");
         }
 
         /// <inheritdoc />
@@ -367,7 +444,13 @@ namespace CasanovaExchange.Migrations
                 name: "CommodityListing");
 
             migrationBuilder.DropTable(
+                name: "CommodityTransactions");
+
+            migrationBuilder.DropTable(
                 name: "CurrentTrade");
+
+            migrationBuilder.DropTable(
+                name: "UserCommodity");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -376,16 +459,16 @@ namespace CasanovaExchange.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Portfolio");
-
-            migrationBuilder.DropTable(
                 name: "Commodity");
 
             migrationBuilder.DropTable(
-                name: "Wallet");
+                name: "Portfolio");
 
             migrationBuilder.DropTable(
                 name: "Warehouse");
+
+            migrationBuilder.DropTable(
+                name: "Wallet");
         }
     }
 }

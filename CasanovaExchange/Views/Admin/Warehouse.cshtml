@@ -1,6 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CasanovaExchange.Models.Warehouse;
 @{
+    Layout = "_Layout";
+    ViewData["title"] = "Warehouse";
+
 }
-<h1>warehouse</h1>
+
+
+<h4>Warehouse Entry Form</h4>
+<hr />
+
+@if (TempData["error"] != null)
+{
+    <div class="col-md-12 alert alert-danger">
+        <span> @TempData["error"]</span>
+    </div>
+}
+<form asp-controller="Admin" asp-action="Warehouse" enctype="multipart/form-data"
+      method="post" class="mt-3">
+
+    <div class="form-group row">
+        <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Name" class="form-control mb-2" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="WarehouseCode" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="WarehouseCode" class="form-control mb-2" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary bm-2" />
+    </div>
+</form>
+
+

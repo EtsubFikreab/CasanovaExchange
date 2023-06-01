@@ -521,7 +521,7 @@ namespace CasanovaExchange.Migrations
                         .IsRequired();
 
                     b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
-                        .WithMany("userCommodities")
+                        .WithMany("UserCommodities")
                         .HasForeignKey("PortfolioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -586,7 +586,7 @@ namespace CasanovaExchange.Migrations
                 {
                     b.Navigation("CommodityListings");
 
-                    b.Navigation("userCommodities");
+                    b.Navigation("UserCommodities");
                 });
 #pragma warning restore 612, 618
         }

@@ -37,8 +37,8 @@ if (!app.Environment.IsDevelopment())
 
 // this is where the defualt admin is created 
 
-defualtLogin _defualtLogin = new defualtLogin();
- _defualtLogin.defualt();
+//defualtLogin _defualtLogin = new defualtLogin();
+ //_defualtLogin.defualt();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

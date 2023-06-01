@@ -97,5 +97,31 @@ namespace CasanovaExchange.Repository
 			_context.SaveChanges();
 
 		}
+
+		public bool AddWarehouse(Warehouse warehouse)
+		{
+			_context.Add(warehouse);
+			_context.SaveChanges();
+			return true;
+		}
+
+		public bool AddCommodity(Commodity commodity)
+
+		{
+
+            Commodity userCommodity = new Commodity
+            {
+                Name = commodity.Name,
+                Symbol = commodity.Symbol,
+                Description = commodity.Description,
+                ProductionYear = commodity.ProductionYear,
+
+                 CommodityWarehouse = _context.Warehouse.Where(p=>p.WarehouseId==commodity.CommodityWarehouse.WarehouseId).Include(p => p.Name).FirstOrDefault(),
+
+            };
+            _context.Add(userCommodity);
+			_context.SaveChanges();
+			return true;
+		}
 	}
 }

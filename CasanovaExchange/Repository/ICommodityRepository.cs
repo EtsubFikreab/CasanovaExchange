@@ -14,5 +14,7 @@ namespace CasanovaExchange.Repository
         public Portfolio GetPortfolio();
         public Commodity GetCommodityById(int id);
         public List<CommodityListing> GetCommodityListings(Commodity commodity);
+        public bool AddWarehouse(Warehouse warehouse);
+        public bool AddCommodity(Commodity commodity);
 	}
 }

@@ -42,11 +42,43 @@ namespace CasanovaExchange.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 
-		public async Task<IActionResult> signin(SigninModel signInModel)
+
+        public async Task defualt()
+        {
+            string email = "admin@gmail.com";
+            var password = "123ADMIN_admin";
+
+            //await signInManager.SignOutAsync();
+            var user = await userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                var newUser = new IdentityUser
+                {
+                    UserName = email,
+                    Email = email,
+
+                };
+
+                var result = await userManager.CreateAsync(newUser, password);
+
+                var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                var roleExist = await RoleManager.RoleExistsAsync("Admin");
+
+                if (!roleExist)
+                {
+                    await RoleManager.CreateAsync(new IdentityRole("Admin"));
+                }
+                await userManager.AddToRoleAsync(newUser, "Admin");
+            }
+
+        }
+
+        public async Task<IActionResult> signin(SigninModel signInModel)
 		{
+            
+         await   defualt();
 
-
-			if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
 				return View(signInModel);
 
 			var user = await userManager.FindByEmailAsync(signInModel.Email);
