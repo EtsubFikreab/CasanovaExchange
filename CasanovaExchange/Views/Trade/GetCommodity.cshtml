@@ -6,6 +6,7 @@
 }
 <h1>@c</h1>
 
+	<input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" name="search">
 
 <table class="table table-hover table-dark w-75">
 	<thead>
@@ -17,7 +18,7 @@
 			<th scope="col">Select</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody id="Commodity-table">
 
 		@foreach (var commodityItem in @Model)
 		{
@@ -26,7 +27,8 @@
 				<th>@commodityItem.Symbol</th>
 				<th>@commodityItem.ProductionYear</th>
 				<th>@commodityItem.CommodityWarehouse.WarehouseCode</th>
-				<th><a class="commodity-list" asp-controller="Trade" asp-action="GetCommodity" asp-route-Commodity="@commodityItem"><img src="~/icons/icons8_back_96px.png"></a>
+				<th>
+					<a class="commodity-list" asp-controller="Trade" asp-action="GetCommodityListings" asp-route-commodityId="@commodityItem.Id"><img src="~/icons/icons8_back_96px.png"></a>
 				</th>
 			</tr>
 		}
@@ -34,7 +36,31 @@
 	</tbody>
 </table>
 <style>
-	img{
-		max-width:3ch;
+	img {
+		max-width: 3ch;
+	}
+
+	#search-input {
+		margin-top: 2ch;
+		margin-bottom: 1ch;
+
+		border-radius: 5px;
+		
+		padding-left: 2ch;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		
+		width: 20vw;
 	}
 </style>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$("#search-input").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#Commodity-table tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>

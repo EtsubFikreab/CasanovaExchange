@@ -108,13 +108,13 @@ namespace CasanovaExchange.Controllers
 				//checks if that Role exists if it doesn't it creates it
 
 				var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-				var roleExist = await RoleManager.RoleExistsAsync(signupModel.role);
+				var roleExist = await RoleManager.RoleExistsAsync("User");
 				if (!roleExist)
 				{
-					await RoleManager.CreateAsync(new IdentityRole(signupModel.role));
+					await RoleManager.CreateAsync(new IdentityRole("User"));
 				}
 
-				await userManager.AddToRoleAsync(newUser, signupModel.role);
+				await userManager.AddToRoleAsync(newUser, "User");
 				TempData["message"] = "register successfull";
 				return RedirectToAction("Index", "Home");
 			}

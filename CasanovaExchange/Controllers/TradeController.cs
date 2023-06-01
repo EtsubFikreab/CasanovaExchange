@@ -1,5 +1,6 @@
 ﻿using CasanovaExchange.Models;
 using CasanovaExchange.Repository;
+using CasanovaExchange.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -28,68 +29,6 @@ namespace CasanovaExchange.Controllers
 			return View();
 		}
 
-		// GET: Trade/Create
-		public ActionResult Create()
-		{
-			return View();
-		}
-
-		// POST: Trade/Create
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Create(IFormCollection collection)
-		{
-			try
-			{
-				return RedirectToAction(nameof(Index));
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
-		// GET: Trade/Edit/5
-		public ActionResult Edit(int id)
-		{
-			return View();
-		}
-
-		// POST: Trade/Edit/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Edit(int id, IFormCollection collection)
-		{
-			try
-			{
-				return RedirectToAction(nameof(Index));
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
-		// GET: Trade/Delete/5
-		public ActionResult Delete(int id)
-		{
-			return View();
-		}
-
-		// POST: Trade/Delete/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Delete(int id, IFormCollection collection)
-		{
-			try
-			{
-				return RedirectToAction(nameof(Index));
-			}
-			catch
-			{
-				return View();
-			}
-		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult BuyProduct(int id, IFormCollection collection)
@@ -123,6 +62,28 @@ namespace CasanovaExchange.Controllers
 			ViewBag.Commodity = commodityString;
 			List<Commodity> CommodityList = _commodityRepository.GetCommodityByName(commodityString);
             return View(CommodityList);
+		}
+		public ViewResult GetCommodityListings(int commodityId)
+		{
+			CommodityListingViewModel commodityListingViewModel = new()
+			{
+				commodity = _commodityRepository.GetCommodityById(commodityId)
+			};
+			commodityListingViewModel.CommodityListings = _commodityRepository.GetCommodityListings(commodityListingViewModel.commodity);
+			commodityListingViewModel.CommodityListing = new CommodityListing()
+			{
+				Commodity = _commodityRepository.GetCommodityById(commodityId),
+				Quantity = 0,
+				Price =0,
+				Active = false
+			};
+			return View(commodityListingViewModel);
+		}
+		[HttpPost]
+		public ViewResult BuyCommodity(CommodityListingViewModel commodityListingViewModel)
+		{
+			commodityListingViewModel.commodity = _commodityRepository.GetCommodityById(commodityListingViewModel.commodity.Id);
+			return View(commodityListingViewModel);
 		}
 	}
 }

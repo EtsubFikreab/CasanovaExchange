@@ -1,6 +1,4 @@
-use commodityexchangedb;
-
-insert into commodity (Name, Symbol, [Description], CommodityWarehouseWarehouseId, ProductionYear)
+insert into commodity ([Name], Symbol, [Description], CommodityWarehouseWarehouseId, ProductionYear)
 values 
    ('Coffee', 'WYCA','YIRGACHEFE A*',9,2015),--9 for dilla 
     ('Coffee', 'WWNA','WENAGO A*',9,2015),
@@ -102,4 +100,3 @@ values
     ('Coffee', 'LUBPAA','BY PRODUCT-Addis',1,2015),
     ('Coffee', 'LUBPDD ','BY PRODUCT-Dire Dawa',10,2015);
 SELECT * from Commodity
-SELECT * FROM AspNetUsers

@@ -54,6 +54,19 @@ namespace CasanovaExchange.Repository
 			CommodityList = _context.Commodity.Where(x => x.Name == commodityName).Include(w => w.CommodityWarehouse).ToList();
 			return CommodityList;
 		}
+		public Commodity GetCommodityById(int id)
+		{
+			return _context.Commodity.Where(x => x.Id == id).Include(w => w.CommodityWarehouse).FirstOrDefault();
+		}
+		public List<CommodityListing> GetCommodityListings(Commodity commodity)
+		{
+			return _context.CommodityListing.Where(cl=>cl.Commodity==commodity).ToList();
+		}
+
+
+
+
+
 		public void CheckPortfolio(string CurrentUserId)
 		{
 			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p=>p.Wallet).FirstOrDefault();

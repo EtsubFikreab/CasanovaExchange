@@ -1,34 +1,17 @@
 using CasanovaExchange.Repository;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System.Globalization;
-
+using CasanovaExchange;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
-builder.Services.AddMvc().AddLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDtaAnotationsLocalization();
-builder.Services.Configure<RequestLocalizationOptions>(
-    opt =>
-    {
-        var supporetdCultures = new List<CultureInfo>
-        {
-            new CultureInfo("en"),
-            new CultureInfo("am")
-        };
-        opt.DefaultRequestCulture = new RequestCulture("en");
-        opt.SupportedCultures = supporetdCultures;
-        opt.SupportedUICultures = supporetdCultures;
-    }
-    );
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICommodityRepository, CommodityExchangeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-
-
+builder.Services.AddLocalization(option => options.ResourcesPath = "Resources");
+builder.Services.AddRazorPages()
+    .AddViewLocalization(LanguageViewLocalizationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization();
 
 builder.Services.AddDbContextPool<CommodityExchangeContext>(
     options => options.UseSqlServer(
@@ -44,7 +27,11 @@ builder.Services.ConfigureApplicationCookie(config =>
 });
 
 var app = builder.Build();
-
+var supportedCultures = new[] { "en", "fr" };
+var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+app.UseRequestLocalization(localizationOptions);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -53,17 +40,19 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+// this is where the defualt admin is created 
+
+defualtLogin _defualtLogin = new defualtLogin();
+ _defualtLogin.defualt();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
-//var supportedCultures = new[] {"en","am"};
-//var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultuers[0])
-//.AddSupportedCultures(supportedCultures)
-//.AddSupportedUICultures(supportedCultures);
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

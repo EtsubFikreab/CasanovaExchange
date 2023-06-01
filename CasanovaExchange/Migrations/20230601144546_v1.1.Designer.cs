@@ -4,6 +4,7 @@ using CasanovaExchange.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasanovaExchange.Migrations
 {
     [DbContext(typeof(CommodityExchangeContext))]
-    partial class CommodityExchangeContextModelSnapshot : ModelSnapshot
+    [Migration("20230601144546_v1.1")]
+    partial class v11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,7 +195,7 @@ namespace CasanovaExchange.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CommodityId")
+                    b.Property<int>("CommoditiesId")
                         .HasColumnType("int");
 
                     b.Property<int>("PortfolioId")
@@ -203,7 +206,7 @@ namespace CasanovaExchange.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommodityId");
+                    b.HasIndex("CommoditiesId");
 
                     b.HasIndex("PortfolioId");
 
@@ -514,9 +517,9 @@ namespace CasanovaExchange.Migrations
 
             modelBuilder.Entity("CasanovaExchange.Models.UserCommodity", b =>
                 {
-                    b.HasOne("CasanovaExchange.Models.Commodity", "Commodity")
+                    b.HasOne("CasanovaExchange.Models.Commodity", "Commodities")
                         .WithMany()
-                        .HasForeignKey("CommodityId")
+                        .HasForeignKey("CommoditiesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -526,7 +529,7 @@ namespace CasanovaExchange.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Commodity");
+                    b.Navigation("Commodities");
 
                     b.Navigation("Portfolio");
                 });

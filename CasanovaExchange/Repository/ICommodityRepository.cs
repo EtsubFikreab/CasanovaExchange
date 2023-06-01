@@ -12,5 +12,7 @@ namespace CasanovaExchange.Repository
         public Wallet GetWallet(string CurrentUserId);
         public void AddBalance(string CurrentUserId, double Balance);
         public Portfolio GetPortfolio();
+        public Commodity GetCommodityById(int id);
+        public List<CommodityListing> GetCommodityListings(Commodity commodity);
 	}
 }

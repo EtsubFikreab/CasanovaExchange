@@ -4,6 +4,7 @@ using CasanovaExchange.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CasanovaExchange.Migrations
 {
     [DbContext(typeof(CommodityExchangeContext))]
-    partial class CommodityExchangeContextModelSnapshot : ModelSnapshot
+    [Migration("20230601144156_ba_v07")]
+    partial class ba_v07
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,9 +69,6 @@ namespace CasanovaExchange.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
                     b.Property<int>("CommodityId")
                         .HasColumnType("int");
 
@@ -84,6 +84,9 @@ namespace CasanovaExchange.Migrations
 
                     b.Property<double>("Quantity")
                         .HasColumnType("float");
+
+                    b.Property<bool>("active")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -182,32 +185,6 @@ namespace CasanovaExchange.Migrations
                     b.HasIndex("CommodityTradedId");
 
                     b.ToTable("CurrentTrade");
-                });
-
-            modelBuilder.Entity("CasanovaExchange.Models.UserCommodity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CommodityId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PortfolioId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Quantity")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CommodityId");
-
-                    b.HasIndex("PortfolioId");
-
-                    b.ToTable("UserCommodity");
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.Wallet", b =>
@@ -512,25 +489,6 @@ namespace CasanovaExchange.Migrations
                     b.Navigation("CommodityTraded");
                 });
 
-            modelBuilder.Entity("CasanovaExchange.Models.UserCommodity", b =>
-                {
-                    b.HasOne("CasanovaExchange.Models.Commodity", "Commodity")
-                        .WithMany()
-                        .HasForeignKey("CommodityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
-                        .WithMany("userCommodities")
-                        .HasForeignKey("PortfolioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Commodity");
-
-                    b.Navigation("Portfolio");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -585,8 +543,6 @@ namespace CasanovaExchange.Migrations
             modelBuilder.Entity("CasanovaExchange.Models.Portfolio", b =>
                 {
                     b.Navigation("CommodityListings");
-
-                    b.Navigation("userCommodities");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,4 +19,3 @@ values
     ('Sesame', 'RDSS','Reddish Sesame Seed',1,2015),
     ('Sesame', 'MRSS','Mixed Reddish Sesame Seed',1,2015);
 SELECT * FROM Commodity
-SELECT * FROM Warehouse
