@@ -41,7 +41,10 @@ namespace CasanovaExchange.Controllers
 					WarehouseCode = warehouse.WarehouseCode,
 				};
 				if (commodityRepository.AddWarehouse(w))
-					return RedirectToAction("commodity", "Admin");
+				{
+                    TempData["message"] = "Warhouse successfully added !!";
+                    return RedirectToAction("Warehouse", "Admin");
+				}
 			}
 
 			return View(warehouse);
@@ -50,7 +53,13 @@ namespace CasanovaExchange.Controllers
 		[HttpGet]
 		public IActionResult Commodity()
 		{
-			AddCommodityViewModel addCommodityViewModel = new();
+			AddCommodityViewModel addCommodityViewModel = new()
+			{
+
+				//Commodity = commodity,
+				Warehouse = commodityRepository.GetWarehouseList(),
+			};
+			
 			// get warehouse list here
 			// addCommodityViewModel.Warehouse =
 
@@ -70,11 +79,16 @@ namespace CasanovaExchange.Controllers
 				Symbol = addCommodityViewModel.Commodity.Symbol,
 				Description = addCommodityViewModel.Commodity.Description,
 				ProductionYear = addCommodityViewModel.Commodity.ProductionYear,
+				CommodityImagePath=addCommodityViewModel.Commodity.CommodityImagePath,
 				CommodityWarehouse = commodityRepository.GetWarehouseByCode( addCommodityViewModel.Commodity.CommodityWarehouse.WarehouseCode),
 			};
 
 			if (commodityRepository.AddCommodity(userCommodity))
+			{
+				TempData["message"] = "Commodity successfully added !!";
 				return RedirectToAction("Commodity", "Admin");
+
+			}
 
 			return RedirectToAction("warehouse", "admin");
 
@@ -82,9 +96,9 @@ namespace CasanovaExchange.Controllers
 
 		private string UploadImage(IFormFile file)
 		{
-			string imgPath = "Product/Image/" + Guid.NewGuid().ToString() + "_" + file.FileName;
+			string imgPath = "Image/" + Guid.NewGuid().ToString() + "_" + file.FileName;
 			string serverPath = Path.Combine(webHostEnvironment.WebRootPath, imgPath);
-			// file.CopyTo(new FileStream(serverPath, FileMode.Create));
+			 file.CopyTo(new FileStream(serverPath, FileMode.Create));
 			return "/" + imgPath;
 		}
 

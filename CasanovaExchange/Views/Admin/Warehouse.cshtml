@@ -15,6 +15,14 @@
         <span> @TempData["error"]</span>
     </div>
 }
+
+@if (TempData["message"] != null)
+{
+    <div class="col-md-12 alert alert-success">
+        <span> @TempData["message"]</span>
+    </div>
+}
+
 <form asp-controller="Admin" asp-action="Warehouse" enctype="multipart/form-data"
       method="post" class="mt-3">
 

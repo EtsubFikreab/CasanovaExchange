@@ -3,6 +3,7 @@
 @{
     Layout = "_Layout";
     ViewData["title"] = "Commodity";
+   // Commodity commodity = Model.Commodity;
 }
 
 
@@ -15,6 +16,14 @@
         <span> @TempData["error"]</span>
     </div>
 }
+
+@if (TempData["message"] != null)
+{
+    <div class="col-md-12 alert alert-success">
+        <span> @TempData["message"]</span>
+    </div>
+}
+
 <form asp-controller="admin" asp-action="AddCommodity" enctype="multipart/form-data"
       method="post" class="mt-3">
 
@@ -47,7 +56,13 @@
     <div class="form-group row">
         <label asp-for="Commodity.CommodityWarehouse.WarehouseCode" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input asp-for="Commodity.CommodityWarehouse.WarehouseCode" class="form-control mb-2" />
+            <select name="Warehouse Code" asp-for="Commodity.CommodityWarehouse.WarehouseCode" style="width:55em">
+                @foreach (var commodity1 in Model.Warehouse)
+                {
+                    <option value="@commodity1.WarehouseCode">@commodity1.WarehouseCode</option>
+
+                }
+            </select>
         </div>
     </div>
 

@@ -27,6 +27,18 @@ namespace CasanovaExchange.Controllers
 			HomeViewModel homeViewModel = _commodityRepository.HomeViewModel(_userManager.GetUserId(User));
 			return View(homeViewModel);
 		}
+		[HttpPost]
+		[Authorize]
+		public async Task<IActionResult> index(string name)
+		{
+		
+				ViewBag.Commodity = name;
+				List<Commodity> CommodityList = _commodityRepository.GetCommodityByName(name);
+
+			
+			return View(CommodityList);
+		}
+
 		[Authorize]
 		public IActionResult Privacy()
 		{
