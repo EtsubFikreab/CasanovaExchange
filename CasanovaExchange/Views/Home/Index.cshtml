@@ -1,9 +1,30 @@
-﻿@{
+﻿@using CasanovaExchange.Models;
+@model List<Commodity>;
+
+@{
 	ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "List Commodities";
+	var commodityList = ViewBag.commodityLs;
+	
 }
 
-<div class="text-center">
-	<h1 class="display-4">Welcome</h1>
-</div>
-<h2>My Commodities</h2>
-<p>@ViewBag.PortfolioID</p>
+
+
+<h4 class="display-4 mb-4">All Commodities</h4>
+@foreach (var c in commodityList)
+{
+	<a class="commodity-list p-2 card w-25 text-white mb-2" asp-controller="home" asp-action="listing" asp-route-commodityString="@c">
+		@c
+	</a>
+}
+
+<style>
+	.commodity-list {
+		background-color: #5D737E;
+		text-decoration: none;
+	}
+
+		.commodity-list:hover {
+			background-color: #2E4057;
+		}
+</style>
