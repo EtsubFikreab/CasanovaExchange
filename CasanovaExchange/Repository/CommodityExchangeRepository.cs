@@ -54,6 +54,10 @@ namespace CasanovaExchange.Repository
 		{
 			return _context.Warehouse.ToList();
 		}
+		public Warehouse GetWarehouseByCode(string WarehouseCode)
+		{
+			return _context.Warehouse.Where(w=>w.WarehouseCode== WarehouseCode).FirstOrDefault();
+		}
 		public List<string> GetCommodityList()
 		{
 			List<string> CommodityList = new List<string>();
@@ -125,18 +129,7 @@ namespace CasanovaExchange.Repository
 		public bool AddCommodity(Commodity commodity)
 
 		{
-
-            Commodity userCommodity = new Commodity
-            {
-                Name = commodity.Name,
-                Symbol = commodity.Symbol,
-                Description = commodity.Description,
-                ProductionYear = commodity.ProductionYear,
-
-                 CommodityWarehouse = _context.Warehouse.Where(p=>p.WarehouseId==commodity.CommodityWarehouse.WarehouseId).Include(p => p.Name).FirstOrDefault(),
-
-            };
-            _context.Add(userCommodity);
+            _context.Add(commodity);
 			_context.SaveChanges();
 			return true;
 		}

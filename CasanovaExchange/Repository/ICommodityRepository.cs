@@ -18,5 +18,6 @@ namespace CasanovaExchange.Repository
         public void SellCommodity(CommodityListingViewModel commodityListingViewModel);
         public bool AddWarehouse(Warehouse warehouse);
         public bool AddCommodity(Commodity commodity);
-	}
+        public Warehouse GetWarehouseByCode(string WarehouseCode);
+    }
 }
