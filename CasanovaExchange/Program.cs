@@ -1,7 +1,7 @@
 using CasanovaExchange.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using CasanovaExchange;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -33,6 +33,12 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
+// this is where the defualt admin is created 
+
+defualtLogin _defualtLogin = new defualtLogin();
+ _defualtLogin.defualt();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

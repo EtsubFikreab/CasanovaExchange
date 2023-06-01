@@ -16,6 +16,6 @@ namespace CasanovaExchange.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-        public string role { get; set; }
+        
     }
 }
