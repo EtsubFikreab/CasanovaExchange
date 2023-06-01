@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Transactions;
 using System.Linq;
 using NuGet.Protocol;
+using CasanovaExchange.ViewModel;
 
 namespace CasanovaExchange.Repository
 {
@@ -15,23 +16,39 @@ namespace CasanovaExchange.Repository
 		{
 			_context = context;
 		}
-		public bool buyCommodity(int id, double PurchaseQuantity, string userId)
+		public bool BuyCommodity(CommodityListingViewModel commodityListingViewModel, string userId)
 		{
-			Trade currentTrade = _context.CurrentTrade.Where(x => x.CommodityTraded.Id == id).FirstOrDefault();
-
-			if (currentTrade.Volume < 0 || currentTrade.Volume < PurchaseQuantity)
-				return false;
-
-			CommodityTransaction commodityTransaction = new CommodityTransaction
+			if (_context.UserCommodity.Where(uc => uc.Commodity == commodityListingViewModel.commodity).FirstOrDefaultAsync() == null)
 			{
-				Commodity = currentTrade.CommodityTraded,
-				Price = currentTrade.Low,
-				Quantity = PurchaseQuantity,
-				//Portfolio = _context.Portfolio.Where(x => x.PortfolioUser.Id == userId).FirstOrDefault()
-			};
-			//_context.CommodityTransactions.Add(commodityTransaction);
+				_context.UserCommodity.Add(new()
+				{
+					Portfolio = GetPortfolio(userId),
+					Commodity = commodityListingViewModel.commodity,
+					Quantity=commodityListingViewModel.Quantity
+				});
+			}
+			else
+			{
+				//_context.UserCommodity.Where(uc => uc.Commodity == commodityListingViewModel.commodity).Include(uc=>uc.Quantity).FirstOrDefaultAsync().Quantity += commodityListingViewModel.Quantity;
+			}
+
+
 			_context.SaveChanges();
 			return true;
+		}
+		public void SellCommodity(CommodityListingViewModel commodityListingViewModel)
+		{
+			Commodity commodity = GetCommodityById(commodityListingViewModel.commodity.Id);
+			CommodityListing commodityListing = new()
+			{
+				Commodity = commodity,
+				Quantity = commodityListingViewModel.CommodityListing.Quantity,
+				Price = commodityListingViewModel.CommodityListing.Price,
+				DateListed = DateTime.Now,
+				Active = false
+			};
+			_context.CommodityListing.Add(commodityListing);
+			_context.SaveChanges();
 		}
 		public List<Warehouse> GetWarehouseList()
 		{
@@ -60,7 +77,7 @@ namespace CasanovaExchange.Repository
 		}
 		public List<CommodityListing> GetCommodityListings(Commodity commodity)
 		{
-			return _context.CommodityListing.Where(cl=>cl.Commodity==commodity).ToList();
+			return _context.CommodityListing.Where(cl => cl.Commodity == commodity).ToList();
 		}
 
 
@@ -69,7 +86,7 @@ namespace CasanovaExchange.Repository
 
 		public void CheckPortfolio(string CurrentUserId)
 		{
-			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p=>p.Wallet).FirstOrDefault();
+			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault();
 			if (CurrentUserPortfolio != null)
 				return;
 
@@ -87,15 +104,15 @@ namespace CasanovaExchange.Repository
 			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault();
 			return CurrentUserPortfolio.Wallet;
 		}
-		public Portfolio GetPortfolio()
+		public Portfolio GetPortfolio(string CurrentUserId)
 		{
+			CurrentUserPortfolio = _context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault();
 			return CurrentUserPortfolio;
 		}
 		public void AddBalance(string CurrentUserId, double Balance)
 		{
-			_context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault().Wallet.Balance+=Balance;
+			_context.Portfolio.Where(p => p.UserId == CurrentUserId).Include(p => p.Wallet).FirstOrDefault().Wallet.Balance += Balance;
 			_context.SaveChanges();
-
 		}
 
 		public bool AddWarehouse(Warehouse warehouse)

@@ -9,7 +9,6 @@ namespace CasanovaExchange.Models
         public Commodity Commodity { get; set; }
         public double Quantity { get; set; }
         public double Price { get; set; }
-		[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 		public DateTime DateListed { get; set; }
         public bool Active { get; set; }
     }

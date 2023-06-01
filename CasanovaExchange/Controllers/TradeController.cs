@@ -85,5 +85,12 @@ namespace CasanovaExchange.Controllers
 			commodityListingViewModel.commodity = _commodityRepository.GetCommodityById(commodityListingViewModel.commodity.Id);
 			return View(commodityListingViewModel);
 		}
+		[HttpPost]
+		public ActionResult SellCommodity (CommodityListingViewModel commodityListingViewModel)
+		{
+			_commodityRepository.SellCommodity(commodityListingViewModel); 
+			
+			return RedirectToAction( "Index", "Home");
+		}
 	}
 }
