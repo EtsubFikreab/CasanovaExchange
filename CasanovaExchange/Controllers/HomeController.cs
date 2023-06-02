@@ -1,5 +1,6 @@
 ﻿using CasanovaExchange.Models;
 using CasanovaExchange.Repository;
+using CasanovaExchange.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,12 +20,15 @@ namespace CasanovaExchange.Controllers
 			_commodityRepository = commodityRepository;
 			_logger = logger;
 		}
-
-
-		[Authorize]
-		public IActionResult Index()
+        [Authorize]
+        public IActionResult Index()
 		{
-			return View();
+			
+
+			_commodityRepository.CheckPortfolio(_userManager.GetUserId(User));
+			HomeViewModel homeViewModel = _commodityRepository.HomeViewModel(_userManager.GetUserId(User));
+			
+			return View(homeViewModel);
 		}
 
 
@@ -34,8 +38,9 @@ namespace CasanovaExchange.Controllers
 			return View();
 		}
 
+       
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

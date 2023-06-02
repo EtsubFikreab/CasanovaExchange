@@ -1,9 +1,135 @@
-﻿@{
+﻿@using CasanovaExchange.Models
+@using CasanovaExchange.ViewModel
+@model HomeViewModel
+@{
 	ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
 	<h1 class="display-4">Welcome</h1>
 </div>
-<h2>My Commodities</h2>
-<p>@ViewBag.PortfolioID</p>
+@if (!User.IsInRole("Admin"))
+{
+	<h2>My Listings</h2>
+	<input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" name="search">
+
+	<table class="table table-hover table-dark w-75">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Commodity Symbol</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Price</th>
+				<th scope="col">Date Listed</th>
+			</tr>
+		</thead>
+		<tbody id="Commodity-table">
+			@foreach (var commodityItem in Model.CommodityListing)
+			{
+				<tr>
+					<th>@commodityItem.Id</th>
+					<th>@commodityItem.Commodity.Symbol</th>
+					<th>@commodityItem.Quantity</th>
+					<th>@commodityItem.Price</th>
+					<th>@commodityItem.DateListed</th>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<br />
+
+	<h2>List of Transactions</h2>
+	<input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" name="search">
+
+	<table class="table table-hover table-dark w-75">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Commodity Symbol</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Price</th>
+				<th scope="col">Transaction Time</th>
+			</tr>
+		</thead>
+		<tbody id="Commodity-table">
+			@foreach (var commodityItem in Model.CommodityTransactions)
+			{
+				<tr>
+					<th>@commodityItem.Id</th>
+					<th>@commodityItem.Commodity.Symbol</th>
+					<th>@commodityItem.Quantity</th>
+					<th>@commodityItem.Price</th>
+					<th>@commodityItem.TransactionTime</th>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+}
+else
+{
+	<input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" name="search">
+
+	<table class="table table-hover table-dark w-75">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Symbol</th>
+				<th scope="col">Production Year</th>
+				<th scope="col">Warehouse Code</th>
+				<th scope="col">Select</th>
+			</tr>
+		</thead>
+		<tbody id="Commodity-table">
+
+			@foreach (var commodityItem in Model.commodity)
+			{
+				<tr>
+					<th>@commodityItem.Name</th>
+					<th>@commodityItem.Symbol</th>
+					<th>@commodityItem.ProductionYear</th>
+					<th>@commodityItem.CommodityWarehouse.WarehouseCode</th>
+					<th>
+						<a class="commodity-list" asp-controller="Trade" asp-action="GetCommodityListings" asp-route-commodityId="@commodityItem.Id"><img src="~/icons/icons8_back_96px.png"></a>
+					</th>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+}
+
+
+
+
+
+
+
+
+<style>
+	img {
+		max-width: 3ch;
+	}
+
+	#search-input {
+		margin-top: 2ch;
+		margin-bottom: 1ch;
+		border-radius: 5px;
+		padding-left: 2ch;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		width: 20vw;
+	}
+</style>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$("#search-input").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#Commodity-table tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>

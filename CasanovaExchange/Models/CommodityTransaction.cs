@@ -7,5 +7,6 @@
         public double Price { get; set; }
         public double Quantity { get; set; }
         public Portfolio Portfolio { get; set; }
+        public DateTime TransactionTime { get; set; }
     }
 }

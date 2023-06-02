@@ -73,10 +73,9 @@ namespace CasanovaExchange.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateListed")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("PortfolioId")
+                    b.Property<int>("PortfolioId")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -113,6 +112,9 @@ namespace CasanovaExchange.Migrations
 
                     b.Property<double>("Quantity")
                         .HasColumnType("float");
+
+                    b.Property<DateTime>("TransactionTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -464,11 +466,15 @@ namespace CasanovaExchange.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CasanovaExchange.Models.Portfolio", null)
+                    b.HasOne("CasanovaExchange.Models.Portfolio", "Portfolio")
                         .WithMany("CommodityListings")
-                        .HasForeignKey("PortfolioId");
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Commodity");
+
+                    b.Navigation("Portfolio");
                 });
 
             modelBuilder.Entity("CasanovaExchange.Models.CommodityTransaction", b =>

@@ -237,8 +237,8 @@ namespace CasanovaExchange.Migrations
                     Quantity = table.Column<double>(type: "float", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
                     DateListed = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Active = table.Column<bool>(type: "bit", nullable: false),
-                    PortfolioId = table.Column<int>(type: "int", nullable: true)
+                    PortfolioId = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -253,7 +253,8 @@ namespace CasanovaExchange.Migrations
                         name: "FK_CommodityListing_Portfolio_PortfolioId",
                         column: x => x.PortfolioId,
                         principalTable: "Portfolio",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -265,7 +266,8 @@ namespace CasanovaExchange.Migrations
                     CommodityId = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Quantity = table.Column<double>(type: "float", nullable: false),
-                    PortfolioId = table.Column<int>(type: "int", nullable: false)
+                    PortfolioId = table.Column<int>(type: "int", nullable: false),
+                    TransactionTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -9,26 +9,31 @@
 <h5>@commodity.Symbol</h5>
 
 <div class="container d-flex justify-content-between">
-	<div class="About-commodity">
-		<div class="About-commodity-top">
-			<h4>About</h4>
-			<p>
-				@commodity.Description
-			</p>
+	<div class="commodity-left-container d-flex flex-column">
+		<div id="commodity-image-container">
+			<img src="~/commodityImages/coffee.png" />
 		</div>
-		<div class="d-flex justify-content-sm-around text-center">
-			<div class="about-item">
-				<div class="fw-bold">WareHouse</div>
-				@commodity.CommodityWarehouse.Name
-				@commodity.CommodityWarehouse.WarehouseCode
+		<div class="About-commodity">
+			<div class="About-commodity-top">
+				<h4>About</h4>
+				<p>
+					@commodity.Description
+				</p>
 			</div>
-			<div class="about-item">
-				<div class="fw-bold">Production Year</div>
-				@commodity.ProductionYear
-			</div>
-			<div class="about-item">
-				<div class="fw-bold">Description</div>
-				@commodity.Description
+			<div class="d-flex justify-content-sm-around text-center">
+				<div class="about-item">
+					<div class="fw-bold">WareHouse</div>
+					@commodity.CommodityWarehouse.Name
+					@commodity.CommodityWarehouse.WarehouseCode
+				</div>
+				<div class="about-item">
+					<div class="fw-bold">Production Year</div>
+					@commodity.ProductionYear
+				</div>
+				<div class="about-item">
+					<div class="fw-bold">Description</div>
+					@commodity.Description
+				</div>
 			</div>
 		</div>
 	</div>
@@ -39,7 +44,7 @@
 		</div>
 		<div id="buy-commodity">
 			<form class="commodity-form d-flex flex-column justify-content-around" asp-controller="Trade" asp-action="BuyCommodity" enctype="multipart/form-data" method="post">
-				<input hidden asp-for="commodity.Id"/>
+				<input hidden asp-for="commodity.Id" />
 				<div class="d-flex flex-column">
 					<label asp-for="Quantity" class=""></label>
 					<input asp-for="Quantity" type="number" placeholder="0" class="" />
@@ -185,9 +190,28 @@
 <style>
 	.container {
 		height: 50ch;
-		align-items: flex-end;
+		margin-top: 3ch;
 		margin-bottom: 4ch;
 	}
+
+	.commodity-left-container {
+	}
+
+	#commodity-image-container {
+		background-color: #2E4057;
+		height: 28ch;
+		border-radius: 10px;
+		margin-bottom: 30px;
+		box-shadow: black 0px 4px 12px;
+		display:flex;
+		justify-content:center;
+	}
+
+		#commodity-image-container img {
+			max-width: 400px;
+			max-height:28ch;
+			margin-inline:auto;
+		}
 
 	.About-commodity {
 		background-color: #2E4057;
@@ -196,7 +220,6 @@
 		padding-top: 2ch;
 		padding-bottom: 1ch;
 		box-shadow: black 0px 4px 12px;
-		height: 20ch;
 		width: 45vw;
 	}
 

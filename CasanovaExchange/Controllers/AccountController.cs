@@ -88,10 +88,12 @@ namespace CasanovaExchange.Controllers
 				var passwordcheck = await userManager.CheckPasswordAsync(user, signInModel.Password);
 				if (passwordcheck)
 				{
-					// password correct signing in
-					var result = await signInManager.PasswordSignInAsync(user, signInModel.Password, false, false);
+				//	var checkRole= userManager.IsInRoleAsync();
+                    // password correct signing in
+                    var result = await signInManager.PasswordSignInAsync(user, signInModel.Password, false, false);
 					if (result.Succeeded)
 					{
+					//	if(checkRole)
 						return RedirectToAction("Index", "Home");
 					}
 				}

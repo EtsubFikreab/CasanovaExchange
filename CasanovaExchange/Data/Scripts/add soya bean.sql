@@ -1,4 +1,4 @@
-use commodityexchangedb;
+
 
 insert into commodity (Name, Symbol, [Description], CommodityWarehouseWarehouseId, ProductionYear)
 values 
