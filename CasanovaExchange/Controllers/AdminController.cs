@@ -101,6 +101,39 @@ namespace CasanovaExchange.Controllers
 			 file.CopyTo(new FileStream(serverPath, FileMode.Create));
 			return "/" + imgPath;
 		}
+		[Authorize]
+		public IActionResult Index()
+		{
+
+			ViewBag.commodityLs = commodityRepository.GetCommodityList();
+			//List<Commodity> commodotiyList = _commodityRepository.GetCommodityList();
+
+			return View();
+
+		}
+		[HttpGet]
+		[Authorize]
+		public IActionResult Listing()
+		{
+			ViewBag.warehouseList = commodityRepository.GetWarehouseList();
+			return View();
+		}
+
+		
+
+		[HttpPost]
+		[Authorize]
+		public async Task<IActionResult> index(string name)
+		{
+
+			ViewBag.Commodity = name;
+			List<Commodity> CommodityList = commodityRepository.GetCommodityByName(name);
+
+
+			return View(CommodityList);
+		}
+
+
 
 
 	}

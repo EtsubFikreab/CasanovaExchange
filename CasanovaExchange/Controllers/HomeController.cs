@@ -19,34 +19,14 @@ namespace CasanovaExchange.Controllers
 			_commodityRepository = commodityRepository;
 			_logger = logger;
 		}
+
+
 		[Authorize]
 		public IActionResult Index()
 		{
-			
-			ViewBag.commodityLs = _commodityRepository.GetCommodityList();
-			//List<Commodity> commodotiyList = _commodityRepository.GetCommodityList();
-
-			return View();
-			
-		}
-		[HttpGet]
-		[Authorize]
-		public IActionResult Listing()
-		{
-			ViewBag.warehouseList = _commodityRepository.GetWarehouseList();
 			return View();
 		}
-		[HttpPost]
-		[Authorize]
-		public async Task<IActionResult> index(string name)
-		{
-		
-				ViewBag.Commodity = name;
-				List<Commodity> CommodityList = _commodityRepository.GetCommodityByName(name);
 
-			
-			return View(CommodityList);
-		}
 
 		[Authorize]
 		public IActionResult Privacy()
