@@ -82,7 +82,7 @@ else
 		</thead>
 		<tbody id="Commodity-table">
 
-			@foreach (var commodityItem in Model.commodity)
+			@foreach (var commodityItem in Model.Commodities)
 			{
 				<tr>
 					<th>@commodityItem.Name</th>
@@ -90,7 +90,7 @@ else
 					<th>@commodityItem.ProductionYear</th>
 					<th>@commodityItem.CommodityWarehouse.WarehouseCode</th>
 					<th>
-						<a class="commodity-list" asp-controller="Trade" asp-action="GetCommodityListings" asp-route-commodityId="@commodityItem.Id"><img src="~/icons/icons8_back_96px.png"></a>
+						<a class="commodity-list" asp-controller="Admin" asp-action="EditCommodity" asp-route-commodityId="@commodityItem.Id"><img src="~/icons/icons8_back_96px.png"></a>
 					</th>
 				</tr>
 			}

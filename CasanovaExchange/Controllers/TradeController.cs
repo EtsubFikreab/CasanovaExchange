@@ -68,6 +68,7 @@ namespace CasanovaExchange.Controllers
             {
                 commodity = _commodityRepository.GetCommodityById(commodityId)
             };
+           
             commodityListingViewModel.CommodityListings = _commodityRepository.GetCommodityListings(commodityListingViewModel.commodity);
             commodityListingViewModel.CommodityListing = new CommodityListing()
             {

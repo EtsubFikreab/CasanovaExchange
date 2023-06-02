@@ -39,63 +39,32 @@
 	</div>
 	<div class="order-commodity">
 		<div class="sell-buy-buttons d-flex justify-content-around w-75 bg-dark ">
-			<button id="sell-commodity-button">Sell</button>
-			<button id="buy-commodity-button">Buy</button>
+			<button id="sell-commodity-button">Edit</button>
+			<button id="buy-commodity-button">Delete</button>
 		</div>
 		<div id="buy-commodity">
 			<form class="commodity-form d-flex flex-column justify-content-around" asp-controller="Trade" asp-action="BuyCommodity" enctype="multipart/form-data" method="post">
 				<input hidden asp-for="commodity.Id" />
-				<div class="d-flex flex-column">
-					<label asp-for="Quantity" class=""></label>
-					<input asp-for="Quantity" type="number" placeholder="0" class="" />
-				</div>
-				<input type="submit" value="Buy Commodity" class="btn btn-primary bm-2" />
+				<input type="submit" value="Delete Commodity" class="btn btn-primary bm-2" />
 			</form>
 		</div>
 		<div id="sell-commodity">
 			<form class="commodity-form sell-commodity-form d-flex flex-column justify-content-around" asp-controller="Trade" asp-action="SellCommodity" enctype="multipart/form-data" method="post">
 				<input hidden asp-for="commodity.Id" />
 				<div class="d-flex flex-column">
-					<label asp-for="CommodityListing.Quantity" class=""></label>
-					<input asp-for="CommodityListing.Quantity" type="number" placeholder="0" class="" />
+					<label asp-for="commodity.Name" class=""></label>
+					<input asp-for="commodity.Name" class="" />
 				</div>
 				<div class="d-flex flex-column">
-					<label asp-for="CommodityListing.Price" class=""></label>
-					<input asp-for="CommodityListing.Price" type="number" placeholder="0" class="" />
+					<label asp-for="commodity.Symbol" class=""></label>
+					<input asp-for="commodity.Symbol" class="" />
 				</div>
-				<input type="submit" value="Sell Commodity" class="btn btn-primary bm-2" />
+				<input type="submit" value="Confirm" class="btn btn-primary bm-2" />
 			</form>
 		</div>
 	</div>
 </div>
 
-
-<h3>Commodity Listings</h3>
-<input type="text" id="search-input" onkeyup="myFunction()" placeholder="Search" name="search">
-
-<table class="table table-hover table-dark w-75">
-	<thead>
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">Symbol</th>
-			<th scope="col">Quantity</th>
-			<th scope="col">Price</th>
-			<th scope="col">Date Listed</th>
-		</tr>
-	</thead>
-	<tbody id="Commodity-table">
-		@foreach (var commodityItem in Model.CommodityListings)
-		{
-			<tr>
-				<th>@commodityItem.Id</th>
-				<th>@commodityItem.Commodity.Symbol</th>
-				<th>@commodityItem.Quantity</th>
-				<th>@commodityItem.Price</th>
-				<th>@commodityItem.DateListed</th>
-			</tr>
-		}
-	</tbody>
-</table>
 <style>
 	img {
 		max-width: 3ch;
@@ -203,14 +172,14 @@
 		border-radius: 10px;
 		margin-bottom: 30px;
 		box-shadow: black 0px 4px 12px;
-		display:flex;
-		justify-content:center;
+		display: flex;
+		justify-content: center;
 	}
 
 		#commodity-image-container img {
 			max-width: 400px;
-			max-height:28ch;
-			margin-inline:auto;
+			max-height: 28ch;
+			margin-inline: auto;
 		}
 
 	.About-commodity {

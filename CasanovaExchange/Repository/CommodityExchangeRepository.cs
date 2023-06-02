@@ -208,7 +208,8 @@ namespace CasanovaExchange.Repository
 			{
 				CommodityListing = _context.CommodityListing.Where(c => c.Portfolio == userPortfolio).Include(c => c.Commodity).ToList(),
 				CommodityTransactions = _context.CommodityTransactions.Where(t => t.Portfolio == userPortfolio).Include(c => c.Commodity).ToList(),
-				UserCommodities = _context.UserCommodity.Where(u => u.Portfolio == userPortfolio).Include(c => c.Commodity).ToList()
+				UserCommodities = _context.UserCommodity.Where(u => u.Portfolio == userPortfolio).Include(c => c.Commodity).ToList(),
+				Commodities = _context.Commodity.Include(c=>c.CommodityWarehouse).ToList(),
 			};
 			return homeViewModel;
 		}

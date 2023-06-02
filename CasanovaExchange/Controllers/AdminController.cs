@@ -42,8 +42,8 @@ namespace CasanovaExchange.Controllers
 				};
 				if (commodityRepository.AddWarehouse(w))
 				{
-                    TempData["message"] = "Warhouse successfully added !!";
-                    return RedirectToAction("Warehouse", "Admin");
+					TempData["message"] = "Warhouse successfully added !!";
+					return RedirectToAction("Warehouse", "Admin");
 				}
 			}
 
@@ -59,16 +59,16 @@ namespace CasanovaExchange.Controllers
 				//Commodity = commodity,
 				Warehouse = commodityRepository.GetWarehouseList(),
 			};
-			
+
 			// get warehouse list here
 			// addCommodityViewModel.Warehouse =
 
-            return View(addCommodityViewModel);
+			return View(addCommodityViewModel);
 		}
 
 		[HttpPost]
 		public async Task<IActionResult> AddCommodity(AddCommodityViewModel addCommodityViewModel)
-        {
+		{
 			if (addCommodityViewModel.Commodity.commodityImage != null)
 			{
 				addCommodityViewModel.Commodity.CommodityImagePath = UploadImage(addCommodityViewModel.Commodity.commodityImage);
@@ -79,8 +79,8 @@ namespace CasanovaExchange.Controllers
 				Symbol = addCommodityViewModel.Commodity.Symbol,
 				Description = addCommodityViewModel.Commodity.Description,
 				ProductionYear = addCommodityViewModel.Commodity.ProductionYear,
-				CommodityImagePath=addCommodityViewModel.Commodity.CommodityImagePath,
-				CommodityWarehouse = commodityRepository.GetWarehouseByCode( addCommodityViewModel.Commodity.CommodityWarehouse.WarehouseCode),
+				CommodityImagePath = addCommodityViewModel.Commodity.CommodityImagePath,
+				CommodityWarehouse = commodityRepository.GetWarehouseByCode(addCommodityViewModel.Commodity.CommodityWarehouse.WarehouseCode),
 			};
 
 			if (commodityRepository.AddCommodity(userCommodity))
@@ -98,7 +98,7 @@ namespace CasanovaExchange.Controllers
 		{
 			string imgPath = "Image/" + Guid.NewGuid().ToString() + "_" + file.FileName;
 			string serverPath = Path.Combine(webHostEnvironment.WebRootPath, imgPath);
-			 file.CopyTo(new FileStream(serverPath, FileMode.Create));
+			file.CopyTo(new FileStream(serverPath, FileMode.Create));
 			return "/" + imgPath;
 		}
 		[Authorize]
@@ -119,7 +119,7 @@ namespace CasanovaExchange.Controllers
 			return View();
 		}
 
-		
+
 
 		[HttpPost]
 		[Authorize]
@@ -134,7 +134,23 @@ namespace CasanovaExchange.Controllers
 		}
 
 
+		public IActionResult EditCommodity(int commodityId)
+		{
+			CommodityListingViewModel commodityListingViewModel = new()
+			{
+				commodity = commodityRepository.GetCommodityById(commodityId)
+			};
 
+			commodityListingViewModel.CommodityListings = commodityRepository.GetCommodityListings(commodityListingViewModel.commodity);
+			commodityListingViewModel.CommodityListing = new CommodityListing()
+			{
+				Commodity = commodityRepository.GetCommodityById(commodityId),
+				Quantity = 0,
+				Price = 0,
+				Active = false
+			};
+			return View(commodityListingViewModel);
+		}
 
 	}
 }

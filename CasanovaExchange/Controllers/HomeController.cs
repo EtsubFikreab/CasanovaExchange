@@ -23,11 +23,8 @@ namespace CasanovaExchange.Controllers
         [Authorize]
         public IActionResult Index()
 		{
-			
-
 			_commodityRepository.CheckPortfolio(_userManager.GetUserId(User));
 			HomeViewModel homeViewModel = _commodityRepository.HomeViewModel(_userManager.GetUserId(User));
-			
 			return View(homeViewModel);
 		}
 
