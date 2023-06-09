@@ -151,6 +151,17 @@ namespace CasanovaExchange.Controllers
 			};
 			return View(commodityListingViewModel);
 		}
+		[HttpPost]
+		public IActionResult EditCommodity(CommodityListingViewModel commodityListingView)
+		{
+			commodityRepository.EditCommodity(commodityListingView.commodity);
+			return RedirectToAction("Index", "Home");
+		}
+		public IActionResult Delete(CommodityListingViewModel commodityListingView)
+		{
+			commodityRepository.DeleteCommodity(commodityListingView.commodity.Id);
+			return RedirectToAction("Index", "Home");
+		}
 
 	}
 }

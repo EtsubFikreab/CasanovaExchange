@@ -213,5 +213,21 @@ namespace CasanovaExchange.Repository
 			};
 			return homeViewModel;
 		}
+		public void EditCommodity(Commodity commodity)
+		{
+			commodity.CommodityWarehouse=_context.Warehouse.Where(c=>c.WarehouseCode==commodity.CommodityWarehouse.WarehouseCode).FirstOrDefault();
+			var moddifiedCommodity = _context.Commodity.Attach(commodity);
+			moddifiedCommodity.State= Microsoft.EntityFrameworkCore.EntityState.Modified;
+			_context.SaveChanges();
+		}
+		public void DeleteCommodity(int commodityId)
+		{
+			Commodity delCommodity = _context.Commodity.Find(commodityId);
+			if(delCommodity != null)
+			{
+				_context.Commodity.Remove(delCommodity);
+				_context.SaveChanges();
+			}
+		}
 	}
 }

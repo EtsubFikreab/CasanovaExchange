@@ -49,7 +49,7 @@
 			</form>
 		</div>
 		<div id="sell-commodity">
-			<form class="commodity-form sell-commodity-form d-flex flex-column justify-content-around" asp-controller="Trade" asp-action="SellCommodity" enctype="multipart/form-data" method="post">
+			<form class="commodity-form sell-commodity-form d-flex flex-column justify-content-around" asp-controller="Admin" asp-action="EditCommodity" enctype="multipart/form-data" method="post">
 				<input hidden asp-for="commodity.Id" />
 				<div class="d-flex flex-column">
 					<label asp-for="commodity.Name" class=""></label>
@@ -58,6 +58,18 @@
 				<div class="d-flex flex-column">
 					<label asp-for="commodity.Symbol" class=""></label>
 					<input asp-for="commodity.Symbol" class="" />
+				</div>
+				<div class="d-flex flex-column">
+					<label asp-for="commodity.Description" class=""></label>
+					<input asp-for="commodity.Description" class="" />
+				</div>
+				<div class="d-flex flex-column">
+					<label asp-for="commodity.ProductionYear" class=""></label>
+					<input asp-for="commodity.ProductionYear" class="" />
+				</div>
+				<div class="d-flex flex-column">
+					<label asp-for="commodity.CommodityWarehouse.WarehouseCode" class=""></label>
+					<input asp-for="commodity.CommodityWarehouse.WarehouseCode" class="" />
 				</div>
 				<input type="submit" value="Confirm" class="btn btn-primary bm-2" />
 			</form>
@@ -262,10 +274,17 @@
 		transition: opacity 0.5s;
 	}
 
+	.buy-sell-drop {
+		margin-bottom: 10ch;
+	}
 </style>
 
 <script>
 	$("#sell-commodity-button").addClass("active");
+
+	$(".sell-buy-buttons").addClass("buy-sell-drop");
+	$(".order-commodity").addClass(".sell-container-drop");
+	
 	$("#buy-commodity-button").addClass("fade");
 
 	$("#sell-commodity-button").click(function () {
