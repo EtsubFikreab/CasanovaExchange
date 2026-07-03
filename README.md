@@ -30,6 +30,9 @@ The goal of this project is to modernize and digitize the trading of agricultura
 ![Sesame Listings](assets/sesame_listings.png)
 *Sesame Market Listings*
 
+![Mung Bean Listings](assets/mung_bean_listing.png)
+*Mung Bean Product Listings*
+
 ## ⚙️ Tech Stack
 
 *   **Framework**: ASP.NET Core MVC (.NET 6/7)
